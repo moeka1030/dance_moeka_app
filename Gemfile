@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 ruby "3.2.7"
 
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.5", ">= 7.1.5.1"
 
@@ -65,3 +66,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "sassc-rails", "~> 2.1"
+
+gem "bcrypt", "~> 3.1"
