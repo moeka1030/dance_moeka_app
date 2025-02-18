@@ -1,0 +1,16 @@
+<header class="header">
+  <div class="header-left">
+    <h1>HOME</h1>
+  </div>
+  <div class="header-right">
+    <% if logged_in? %>
+      <%= link_to logout_path, method: :delete, class: "logout-icon" do %>
+        <i class="fa-solid fa-right-from-bracket"></i> <!-- ログアウトアイコン -->
+      <% end %>
+    <% else %>
+      <%= link_to login_path, class: "login-button" do %>
+        Log in
+      <% end %>
+    <% end %>
+  </div>
+</header>

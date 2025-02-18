@@ -40,3 +40,56 @@
     background-color: #4299e1;
   }
   
+  /* ヘッダーデザイン */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .header h1 {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  
+  .header-right {
+    margin-right: 10px;
+  }
+  
+  .logout-icon i {
+    font-size: 20px;
+    color: black;
+  }
+  
+  .login-button {
+    padding: 5px 10px;
+    background: blue;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background: white;
+    border-top: 2px solid #ddd;
+    position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.nav-item {
+  font-size: 24px;
+  color: gray;
+}
+
+.nav-item.active {
+  color: red;
+}
+
+  
