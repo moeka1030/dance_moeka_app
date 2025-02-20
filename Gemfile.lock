@@ -108,6 +108,8 @@ GEM
     erubi (1.13.1)
     ffi (1.17.1-x86_64-darwin)
     ffi (1.17.1-x86_64-linux-gnu)
+    font-awesome-sass (6.7.2)
+      sassc (~> 2.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -266,6 +268,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  font-awesome-sass (~> 6.7)
   importmap-rails
   jbuilder
   puma (>= 5.0)

@@ -1,0 +1,7 @@
+<h1>Home</h1>
+
+<div class="post-list">
+  <% @posts.each do |post| %>
+    <%= render 'post', post: post %>
+  <% end %>
+</div>

@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>DanceMoekaApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>dance_moeka_app</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+</head>
 
-  <body>
-     <%= render 'layouts/header' %>
-  <div class="content">
-    <%= yield %>
-   </div>
-  <%= render 'layouts/navbar' %>
+<body>
+  <%= render "shared/navbar" %> <!-- ナビゲーションバーを読み込む -->
 
-  </body>
+  <%= yield %> <!-- ここに各ページのコンテンツが入る -->
+</body>
 </html>

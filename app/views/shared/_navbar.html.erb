@@ -7,7 +7,13 @@
     <i class="icon-heart"></i>
   <% end %>
 
-  <%= link_to user_path(current_user), class: "nav-item #{current_page?(user_path(current_user)) ? 'active' : ''}" do %>
-    <i class="icon-user"></i>
+  <% if current_user %>  <!-- ログインしているときだけ表示 -->
+    <%= link_to user_path(current_user), class: "nav-item #{current_page?(user_path(current_user)) ? 'active' : ''}" do %>
+      <i class="icon-user"></i>
+    <% end %>
+  <% else %>
+    <%= link_to login_path, class: "nav-item" do %>
+      <i class="icon-login"></i>
+    <% end %>
   <% end %>
 </nav>
