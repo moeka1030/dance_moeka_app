@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:info] = 'success!'
-      redirect_to root_path, notice: "Account created successfully!"
+      redirect_to @user, notice: "Account created successfully!"
     else
       flash[:danger] = 'not'
       render 'new', status: :unprocessable_entity
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   #profileページについて
   def show
-    
+    @user = User.find(params[:id])
   end
 
   def edit

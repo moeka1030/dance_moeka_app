@@ -73,23 +73,36 @@
   }
   
   .navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    padding: 10px;
-    background: white;
+    background: #fff;
     border-top: 2px solid #ddd;
-    position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-.nav-item {
-  font-size: 24px;
-  color: gray;
-}
-
-.nav-item.active {
-  color: red;
-}
-
+    padding: 10px 0;
+  }
+  
+  .nav-item {
+    text-decoration: none;
+    color: #A0A0A0;
+    font-size: 24px;
+    padding: 10px;
+  }
+  
+  .nav-item.active {
+    color: #FF6B6B;
+  }
+  
+  .icon-home::before {
+    content: "🏠"; /* ホームアイコン */
+  }
+  
+  .icon-heart::before {
+    content: "❤️"; /* いいねアイコン */
+  }
+  
+  .icon-user::before {
+    content: "👤"; /* プロフィールアイコン */
+  }
   

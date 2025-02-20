@@ -1,0 +1,13 @@
+<nav class="navbar">
+  <%= link_to root_path, class: "nav-item #{current_page?(root_path) ? 'active' : ''}" do %>
+    <i class="icon-home"></i>
+  <% end %>
+
+  <%= link_to likes_path, class: "nav-item #{current_page?(likes_path) ? 'active' : ''}" do %>
+    <i class="icon-heart"></i>
+  <% end %>
+
+  <%= link_to user_path(current_user), class: "nav-item #{current_page?(user_path(current_user)) ? 'active' : ''}" do %>
+    <i class="icon-user"></i>
+  <% end %>
+</nav>
