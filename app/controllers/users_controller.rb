@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   #signupについて
+  before_action :set_user, only: [:edit, :update]
   def new
     @user = User.new #空のユーザインスタンス
   end

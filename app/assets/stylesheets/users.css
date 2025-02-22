@@ -1,0 +1,74 @@
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* プロフィール画像 */
+  .profile-image {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ddd;
+    margin-bottom: 20px;
+  }
+  
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .image-upload {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+  }
+  
+  .hidden-input {
+    display: none;
+  }
+  
+  /* ユーザー情報 */
+  .profile-info {
+    width: 80%;
+  }
+  
+  .info-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .input-field {
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    text-align: right;
+    width: 50%;
+  }
+  
+  /* 保存ボタン */
+  .save-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: #63b3ed;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .save-button:hover {
+    background-color: #4299e1;
+  }
+  

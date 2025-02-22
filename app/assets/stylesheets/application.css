@@ -1,3 +1,7 @@
+/* FontAwesome の読み込み */
+@import "font-awesome";
+
+
 /* ログインフォームのデザイン */
 .login-container {
     max-width: 350px;
@@ -95,14 +99,74 @@
   }
   
   .icon-home::before {
-    content: "🏠"; /* ホームアイコン */
-  }
-  
-  .icon-heart::before {
-    content: "❤️"; /* いいねアイコン */
-  }
-  
-  .icon-user::before {
-    content: "👤"; /* プロフィールアイコン */
-  }
-  
+    content: "🏠" !important; /* ホームアイコン */
+    font-size: 24px;
+}
+
+.icon-heart::before {
+    content: "❤️" !important; /* いいねアイコン */
+    font-size: 24px;
+}
+
+.icon-user::before {
+    content: "👤" !important; /* プロフィールアイコン */
+    font-size: 24px;
+}
+
+/* いいね一覧ページのレイアウト */
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列グリッド */
+  gap: 10px;
+  padding: 10px;
+}
+
+/* 各投稿 */
+.post-item {
+  position: relative;
+  border: 2px solid #000;
+  padding: 10px;
+  text-align: center;
+}
+
+/* 動画サムネイル */
+.post-thumbnail {
+  position: relative;
+}
+
+.post-thumbnail img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* カテゴリ名（HIPHOPなど） */
+.post-category {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* いいねボタン */
+.like-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.like-button.active {
+  color: red;
+}
