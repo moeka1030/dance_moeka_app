@@ -113,15 +113,13 @@
     font-size: 24px;
 }
 
-/* いいね一覧ページのレイアウト */
 .post-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2列グリッド */
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   padding: 10px;
 }
 
-/* 各投稿 */
 .post-item {
   position: relative;
   border: 2px solid #000;
@@ -129,44 +127,25 @@
   text-align: center;
 }
 
-/* 動画サムネイル */
-.post-thumbnail {
-  position: relative;
+.profile-container {
+  text-align: center;
+  padding: 20px;
 }
 
-.post-thumbnail img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
+.profile-info p {
+  margin: 5px 0;
+}
+
+.save-button {
+  padding: 10px 20px;
+  background-color: #63b3ed;
   color: white;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 50%;
-}
-
-/* カテゴリ名（HIPHOPなど） */
-.post-category {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/* いいねボタン */
-.like-button {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  font-size: 24px;
+  border: none;
   cursor: pointer;
-}
-
-.like-button.active {
-  color: red;
 }
