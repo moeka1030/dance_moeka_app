@@ -3,12 +3,11 @@
 <div class="profile-container">
   <div class="profile-header">
     <div class="profile-image">
-      <% if @user.profile_image.attached? %>
-  <%= image_tag @user.profile_image, size: "100x100" %>
-<% else %>
-  <%= image_tag 'default-profile.png', alt: "Profile Image", size: "100x100" %>
-<% end %>
-
+      <% if @user&.profile_image&.attached? %>
+        <%= image_tag @user.profile_image, size: "100x100" %>
+      <% else %>
+        <%= image_tag asset_path('default-profile.png'), alt: "Profile Image", size: "100x100" %>
+      <% end %>
     </div>
     <div class="profile-info">
       <p>name : <%= @user.name %></p>
@@ -27,7 +26,7 @@
     <% @user.posts.each do |post| %>
       <div class="post-item">
         <a href="<%= post.video_url %>">
-          <img src="<%= post.thumbnail_url || 'default-thumbnail.png' %>" alt="動画">
+          <img src="<%= post.thumbnail_url || asset_path('default-thumbnail.png') %>" alt="動画">
           <div class="play-button">▶️</div>
         </a>
         <p class="post-category">HIPHOP</p>

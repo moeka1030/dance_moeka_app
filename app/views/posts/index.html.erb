@@ -1,7 +1,26 @@
-<h1>Home</h1>
+<h1>HOME</h1>
 
-<div class="post-list">
+<div class="post-grid">
   <% @posts.each do |post| %>
-    <%= render 'post', post: post %>
+    <div class="post-item">
+      <div class="post-thumbnail">
+        <a href="<%= post.video_url %>">
+          <img src="<%= post.thumbnail_url || 'default-thumbnail.png' %>" alt="動画">
+          <div class="play-button">▶️</div>
+        </a>
+      </div>
+
+      <p class="post-category">HIPHOP</p>
+
+      <% if post.likes.exists?(user: current_user) %>
+        <%= link_to post_like_path(post, current_user.likes.find_by(post: post)), method: :delete, class: "like-button active" do %>
+          ❤️
+        <% end %>
+      <% else %>
+        <%= link_to post_likes_path(post), method: :post, class: "like-button" do %>
+          🤍
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
 </div>
