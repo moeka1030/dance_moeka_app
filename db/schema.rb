@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.1].define(version: 2025_02_23_032637) do
-=======
 ActiveRecord::Schema[7.1].define(version: 2025_02_23_075719) do
->>>>>>> ダミーデータ作成とエラー修正
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -82,10 +78,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_23_075719) do
     t.string "genre"
     t.integer "experience"
     t.string "profile_image"
-<<<<<<< HEAD
-=======
     t.index ["email"], name: "index_users_on_email", unique: true
->>>>>>> ダミーデータ作成とエラー修正
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
