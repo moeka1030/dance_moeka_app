@@ -1,13 +1,18 @@
+<%# homeのビュー %>
 <h1>HOME</h1>
 
 <div class="post-grid">
   <% @posts.each do |post| %>
     <div class="post-item">
       <div class="post-thumbnail">
-        <a href="<%= post.video_url %>">
-          <img src="<%= post.thumbnail_url || 'default-thumbnail.png' %>" alt="動画">
-          <div class="play-button">▶️</div>
-        </a>
+        <% if post.video.attached? %>
+          <a href="<%= url_for(post.video) %>">
+            <%= image_tag post.thumbnail_url || 'default-thumbnail.png', alt: "動画" %>
+            <div class="play-button">▶️</div>
+          </a>
+        <% else %>
+          <p>動画なし</p>
+        <% end %>
       </div>
 
       <p class="post-category">HIPHOP</p>

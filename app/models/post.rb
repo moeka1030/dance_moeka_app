@@ -1,7 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :likes, dependent: :destroy
+  has_one_attached :video
 
-  validates :contents, presence: true, length: { maximum:200 }
-  validates :video_url, presence: true
+  validates :description, presence: true, length: { maximum: 200 } 
+  # validates :video, presence: true
+  validates :genre, presence: true
 end

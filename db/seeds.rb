@@ -1,47 +1,31 @@
-# ダミーデータの作成
-#ユーザデータ
-#
+# 🚀 ユーザーデータの作成
 puts "🚀 Userデータ作成開始！"
 
-user1 = User.create!(
-  name: "Moeka",
-  email: "moeka@example.com",
-  password: "password123", 
-  password_confirmation: "password123", 
-  genre: "HIPHOP",
-  age: 20,
-  experience: 10,
-  profile_image: "default-profile.png"
-)
-puts "✅ User1 作成完了: #{user1.inspect}"
+user = User.find_or_create_by!(email: "moeka@example.com") do |u|
+  u.name = "Moeka"
+  u.password = "password123"
+  u.password_confirmation = "password123"
+  u.genre = "HIPHOP"
+  u.age = 20
+  u.experience = 10
+end
 
+puts "✅ Userデータ作成完了！"
 
-user2 = User.create!(
-  name: "Kei",
-  email: "kei@example.com",
-  password: "password123", 
-  password_confirmation: "password123", 
-  genre: "BREAKIN'",
-  age: 25,
-  experience: 12,
-  profile_image: "default-profile.png"
-)
+# 📸 ActiveStorage の画像を設定（すでに設定済みならスキップ）
+if user.profile_image.attached? == false
+  image_path = Rails.root.join("public/default-profile.png")
 
-
-
-# 投稿データ
-post1  = Post.create!(
-  user: user1,
-  content: "ダンス動画をアップしました！",
-  video_url: "https://example.com/video1.mp4"
-)
-
-post2 = Post.create!(
-  user: user2,
-  content: "新しいムーブを練習中！",
-  video_url: "https://example.com/video2.mp4"
-)
-
-# いいねデータ
-Like.create!(user: user1, post: post2) # MoekaがKeiの投稿にいいね
-Like.create!(user: user2, post: post1)  # KeiがMoekaの投稿にいいね
+  if File.exist?(image_path)
+    user.profile_image.attach(
+      io: File.open(image_path),
+      filename: "default-profile.png",
+      content_type: "image/png"
+    )
+    puts "✅ プロフィール画像をアタッチしました！"
+  else
+    puts "⚠️ 画像ファイルが見つかりません！ #{image_path}"
+  end
+else
+  puts "✅ すでにプロフィール画像が設定されています！"
+end

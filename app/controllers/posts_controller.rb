@@ -14,9 +14,10 @@ class PostsController < ApplicationController
   end
 
   def create #新規投稿
-    @post = current_user.posts.build(post_params)
+    @post = Post.new(post_params)
+    @post.user = current_user
     if @post.save
-      redirect_to posts_path , notice: '投稿が作成されました'
+      redirect_to user_path(current_user) , notice: '投稿が作成されました'
     else
         render :new
     end
@@ -45,6 +46,6 @@ class PostsController < ApplicationController
   private
 
   def post_params #更新するデータを取得する（postに関するデータ・commentとビデオカラムの編集のみ許可）
-    params.require(:post).permit(:contents, :video_url)
+    params.require(:post).permit(:video, :genre, :description)
   end
 end
