@@ -1,26 +1,38 @@
 .profile-container {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+    padding: 20px; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+
+  .profile-image-container {
+    position: relative;
+    display: inline-block;
   }
   
   /* プロフィール画像 */
   .profile-image {
-    position: relative;
+    /* position: relative;
     width: 120px;
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
     background: #ddd;
-    margin-bottom: 20px;
+    margin-bottom: 20px; */
+  border-radius: 50%;
+  background-color: lightgray;
   }
   
-  .profile-image img {
+  /* .profile-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+  } */
+  
   
   .image-upload {
     position: absolute;
@@ -36,39 +48,73 @@
     display: none;
   }
   
+  /* カメラアイコン */
+.camera-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
   /* ユーザー情報 */
   .profile-info {
     width: 80%;
   }
   
   .info-item {
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
   }
   
   .input-field {
-    border: none;
+    /* border: none;
     background: transparent;
     font-size: 18px;
     text-align: right;
-    width: 50%;
+    width: 50%; */
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  width: 150px;
+  text-align: center;
   }
+
+  /* 保存ボタン */
+.button-container {
+  margin-top: 20px;
+}
   
   /* 保存ボタン */
   .save-button {
-    margin-top: 20px;
+    /* margin-top: 20px;
     padding: 10px 20px;
     font-size: 18px;
     border-radius: 20px;
     background-color: #63b3ed;
     color: white;
     border: none;
-    cursor: pointer;
+    cursor: pointer; */
+  background-color: deepskyblue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
   }
   
-  .save-button:hover {
+  /* .save-button:hover {
     background-color: #4299e1;
-  }
+  } */
   

@@ -5,12 +5,11 @@
 <!-- 動画アップロード -->
 <%= form_with model: @post, url: posts_path, method: :post, local: true, multipart: true do |f| %>
   <div style="border: 1px solid black; padding: 10px; text-align: center;">
-    <label for="post_video" style="cursor: pointer;">
+    <%= f.label :video, "動画を選択" %>
       <div style="width: 50px; height: 50px; background-color: lightgray; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: auto;">
         ➕
       </div>
-    </label>
-    <%= f.file_field :video, style: "display: none;" %>
+    <%= f.file_field :video, accept: "video/*" %>
   </div>
 
   <!-- ジャンル入力 -->

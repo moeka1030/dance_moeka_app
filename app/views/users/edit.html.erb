@@ -1,34 +1,41 @@
 <h1>PROFILE</h1>
 
-
 <%= form_with(model: @user, local: true, html: { multipart: true }) do |f| %>
- <div class="profile-image">
-   <% if @user&.profile_image&.attached? %>
-     <%= image_tag @user.profile_image, size: "100x100" %>
-   <% else %>
-     <%= image_tag "/default-profile.png", size: "100x100" %>
-   <% end %>
+  <div class="profile-container">
+    <!-- プロフィール画像 -->
+    <div class="profile-image-container">
+      <% if @user&.profile_image&.attached? %>
+        <%= image_tag @user.profile_image, size: "100x100", class: "profile-image" %>
+      <% else %>
+        <%= image_tag "/default-profile.png", size: "100x100", class: "profile-image" %>
+      <% end %>
 
+      <!-- カメラアイコン（クリックで画像選択） -->
+      <label for="profile_image_upload" class="camera-icon">
+        📷
+      </label>
+      <%= f.file_field :profile_image, id: "profile_image_upload", class: "hidden-input" %>
+    </div>
 
-   <%= f.file_field :profile_image, class: "hidden-input" %>
- </div>
+    <!-- プロフィール情報 -->
+    <div class="profile-info">
+      <div class="info-item">
+        <span>name</span> <span>: <%= f.text_field :name, class: "input-field" %></span>
+      </div>
+      <div class="info-item">
+        <span>genre</span> <span>: <%= f.select :genre, ["HIPHOP", "JAZZ", "BALLET", "BREAKING"], class: "input-field" %></span>
+      </div>
+      <div class="info-item">
+        <span>age</span> <span>: <%= f.number_field :age, class: "input-field" %></span>
+      </div>
+      <div class="info-item">
+        <span>experience</span> <span>: <%= f.number_field :experience, class: "input-field" %></span>
+      </div>
+    </div>
 
-
- <div class="profile-info">
-   <div class="info-item">
-     <span>name</span> <span>: <%= f.text_field :name, class: "input-field" %></span>
-   </div>
-   <div class="info-item">
-     <span>genre</span> <span>: <%= f.select :genre, ["HIPHOP", "JAZZ", "BALLET", "BREAKING"], class: "input-field" %></span>
-   </div>
-   <div class="info-item">
-     <span>age</span> <span>: <%= f.number_field :age, class: "input-field" %></span>
-   </div>
-   <div class="info-item">
-     <span>experience</span> <span>: <%= f.number_field :experience, class: "input-field" %></span>
-   </div>
- </div>
-
-
- <%= f.submit "save", class: "save-button" %>
+    <!-- 保存ボタン -->
+    <div class="button-container">
+      <%= f.submit "save", class: "save-button" %>
+    </div>
+  </div>
 <% end %>

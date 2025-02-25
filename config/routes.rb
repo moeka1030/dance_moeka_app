@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
 root 'static_pages#home' #home画面（サインアップかログアウトかのボタン表示）
+devise_for :users, skip: [:registrations, :sessions]
 resources :users, only: [:new, :create, :show, :edit, :update] #:show, :edit, :updateはプロフィールの機能
 resources :posts
 resources :posts do

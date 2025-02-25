@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper #コントローラーで使用できるように
   helper_method :current_user, :logged_in?
-   
+  # before_action :authenticate_user! 
+  
   private
 
   def authenticate_user
