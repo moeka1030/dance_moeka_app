@@ -2,14 +2,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :authenticate_user!, only: [:edit, :update]
 
   protected
-  
+
   def after_sign_up_path_for(resource)
-    user_profile_path # プロフィールページへリダイレクト
+    post_index # プロフィールページへリダイレクト
   end
 
   # プロフィール編集後のリダイレクト先を変更
   def after_update_path_for(resource)
-    user_profile_path # プロフィールページへリダイレクト
+    post_index # プロフィールページへリダイレクト
   end
 
   private

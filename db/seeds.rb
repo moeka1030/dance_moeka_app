@@ -1,10 +1,10 @@
 # ユーザーデータの作成
 
 puts "Userデータ作成開始"
-user1 = User.find_or_create_by!(email: "moeka@example.com") do |u|
-  u.name = "Moeka"
-  u.password = "newpassword123"
-  u.password_confirmation = "newpassword123"
+user1 = User.find_or_create_by!(email: "moeka@moeka.com") do |u|
+  u.name = "moekan"
+  u.password = "password7777"
+  u.password_confirmation = "password7777"
   u.genre = "HIPHOP"
   u.age = 20
   u.experience = 10

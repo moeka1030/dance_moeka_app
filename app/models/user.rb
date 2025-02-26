@@ -11,10 +11,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
-  validates :age, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-  validates :genre, presence: true
-  validates :experience, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-
+ 
   # ユーザーは複数の投稿を持つ・削除時に投稿も削除
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy

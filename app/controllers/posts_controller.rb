@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   end
 
   def create # 新規投稿
+    @post = Post.new(post_params)
     @post = current_user.posts.build(post_params) # `build` を使って current_user に関連付ける
     if @post.save
       redirect_to user_profile_path, notice: '投稿が作成されました'

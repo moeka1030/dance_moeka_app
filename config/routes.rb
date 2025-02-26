@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
-
+  #homeページ
+  get '/posts/index', to: 'posts#index',as: :post_index
   # プロフィールページ
   get '/users/profile', to: 'users#show', as: :user_profile
 
