@@ -1,15 +1,17 @@
 <div class="post-item">
-  <p><%= post.contents %></p>
+  <p><%= post.description %></p>
   <p>投稿者: <%= post.user.name %></p>
 
-  <!-- いいねボタン -->
-  <% if post.likes.exists?(user: current_user) %>
-    <%= link_to post_like_path(post, current_user.likes.find_by(post: post)), method: :delete do %>
-      💔
-    <% end %>
-  <% else %>
-    <%= link_to post_likes_path(post), method: :post do %>
-      🩷
+  <!-- いいねボタン（ログイン時のみ表示） -->
+  <% if user_signed_in? %>
+    <% if post.likes.exists?(user: current_user) %>
+      <%= link_to post_like_path(post), method: :delete, class: "like-button active" do %>
+        💔
+      <% end %>
+    <% else %>
+      <%= link_to post_likes_path(post), method: :post, class: "like-button" do %>
+        🩷
+      <% end %>
     <% end %>
   <% end %>
 </div>

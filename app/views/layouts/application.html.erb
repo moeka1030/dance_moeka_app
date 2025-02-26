@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>dance_moeka_app</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= yield(:title) || "MyApp" %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-
   <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
 </head>
-
 <body>
-  <%= render "shared/navbar" %> <!-- ナビゲーションバーを読み込む -->
 
-  <%= yield %> <!-- ここに各ページのコンテンツが入る -->
+  <!-- ナビバー -->
+  <% unless devise_controller? || current_page?(root_path) %>
+    <nav class="navbar">
+      <%= link_to root_path, class: "nav-item #{current_page?(root_path) ? 'active' : ''}" do %>
+        <i class="icon-home"></i> ホーム
+      <% end %>
+
+      <%= link_to likes_path, class: "nav-item #{current_page?(likes_path) ? 'active' : ''}" do %>
+        <i class="icon-heart"></i> いいね
+      <% end %>
+
+      <% if user_signed_in? %>  <!-- Deviseのメソッドを利用 -->
+        <%= link_to user_profile_path, class: "nav-item #{current_page?(user_profile_path) ? 'active' : ''}" do %>
+          <i class="icon-user"></i> プロフィール
+        <% end %>
+
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item logout-btn" %>
+
+      <% else %>
+        <%= link_to new_user_session_path, class: "nav-item" do %>
+          <i class="icon-login"></i> ログイン
+        <% end %>
+        <%= link_to new_user_registration_path, class: "nav-item" do %>
+          <i class="icon-signup"></i> サインアップ
+        <% end %>
+      <% end %>
+    </nav>
+  <% end %>
+
+  <!-- メインコンテンツ -->
+  <%= yield %>
+
 </body>
 </html>

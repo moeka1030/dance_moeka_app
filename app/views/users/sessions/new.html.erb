@@ -1,0 +1,38 @@
+<%# ログインページ %>
+
+<h2>Let’s login!</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { method: :post }) do |f| %>
+  <div class="login-container">
+
+    <!-- エラーメッセージ -->
+    <% if resource.errors.any? %>
+      <div class="error-messages">
+        <ul>
+          <% resource.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <!-- メールアドレス -->
+    <div class="form-group">
+      <%= f.email_field :email, placeholder: "email address", class: "input-field" %>
+    </div>
+
+    <!-- パスワード -->
+    <div class="form-group">
+      <%= f.password_field :password, placeholder: "password", class: "input-field" %>
+    </div>
+
+    <!-- ログインボタン -->
+    <div class="form-group">
+      <%= f.submit "login", class: "login-button" %>
+    </div>
+  </div>
+<% end %>
+
+<!-- パスワードリセット / サインアップリンク -->
+<p><%= link_to "Forgot password?", new_user_password_path %></p>
+<p><%= link_to "Create an account", new_user_registration_path %></p>

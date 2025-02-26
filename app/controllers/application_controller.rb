@@ -1,18 +1,10 @@
+
 class ApplicationController < ActionController::Base
-  include SessionsHelper #コントローラーで使用できるように
-  helper_method :current_user, :logged_in?
-  # before_action :authenticate_user! 
-  
-  private
+  before_action :authenticate_user!, unless: -> { controller_name == "static_pages" && action_name == "home" }  #home のときは authenticate_user! を適用しない
 
-  def authenticate_user
-    unless logged_in?
-      flash[:alert] = 'ログインをしてください'
-      redirect_to login_path
-    end
+  # ログイン後のリダイレクト先を指定
+  def after_sign_in_path_for(resource)
+    posts_path  # ログイン後に投稿一覧へ遷移
   end
-
-  
-
-
 end
+

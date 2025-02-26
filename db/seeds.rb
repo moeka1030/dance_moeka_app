@@ -3,8 +3,8 @@
 puts "Userデータ作成開始"
 user1 = User.find_or_create_by!(email: "moeka@example.com") do |u|
   u.name = "Moeka"
-  u.password = "password123"
-  u.password_confirmation = "password123"
+  u.password = "newpassword123"
+  u.password_confirmation = "newpassword123"
   u.genre = "HIPHOP"
   u.age = 20
   u.experience = 10

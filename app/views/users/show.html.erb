@@ -1,27 +1,29 @@
+<%# プロフィールページ %>
+
 <h1>PROFILE</h1>
 <div class="profile-container">
   <div class="profile-header">
     <div class="profile-image">
-      <% if @user&.profile_image&.attached? %>
-        <%= image_tag @user.profile_image, size: "100x100" %>
+      <% if current_user&.profile_image&.attached? %>
+        <%= image_tag current_user.profile_image, size: "100x100" %>
       <% else %>
         <%= image_tag "/default-profile.png", alt: "Profile Image", size: "100x100" %>
       <% end %>
     </div>
     <div class="profile-info">
-      <p>name : <%= @user.name %></p>
-      <p>genre : <%= @user.genre %></p>
-      <p>age : <%= @user.age %></p>
-      <p>experience : <%= @user.experience %></p>
+      <p>name : <%= current_user.name %></p>
+      <p>genre : <%= current_user.genre %></p>
+      <p>age : <%= current_user.age %></p>
+      <p>experience : <%= current_user.experience %></p>
     </div>
     <div class="edit-button">
-      <%= link_to "プロフィール編集 ✏️", edit_user_path("current"), class: "edit-icon" %>
+      <%= link_to "プロフィール編集 ✏️", edit_user_registration_path, class: "edit-icon" %>
     </div>
   </div>
 
   <!-- 投稿一覧 -->
   <div class="post-container">
-    <% @posts.each do |post| %>
+    <% current_user.posts.each do |post| %>
       <div class="post-item">
         <% if post.video.attached? %>
           <video width="200" controls>

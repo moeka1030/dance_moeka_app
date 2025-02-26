@@ -15,7 +15,7 @@
   <!-- ジャンル入力 -->
   <div>
     <%= f.label :genre, "Genre", style: "color: gray;" %>
-    <%= f.text_field :genre %>
+    <%= f.select :genre, ["HIPHOP", "JAZZ", "BALLET", "BREAKING"], {}, class: "input-field" %>
   </div>
 
   <!-- 説明入力 -->
@@ -26,6 +26,6 @@
 
   <!-- 投稿ボタン -->
   <div>
-    <%= f.submit "create", style: "background-color: deepskyblue; color: white; padding: 10px; border-radius: 10px; border: none;" %>
+    <%= f.submit "Create", style: "background-color: deepskyblue; color: white; padding: 10px; border-radius: 10px; border: none;" %>
   </div>
 <% end %>

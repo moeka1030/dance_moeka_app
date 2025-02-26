@@ -1,22 +1,18 @@
+
 Rails.application.routes.draw do
-  devise_for :users
-root 'static_pages#home' #home画面（サインアップかログアウトかのボタン表示）
-devise_for :users, skip: [:registrations, :sessions]
-resources :users, only: [:new, :create, :show, :edit, :update] #:show, :edit, :updateはプロフィールの機能
-resources :posts
-resources :posts do
-  resources :like, only: [:create, :destroy]
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations'
+  }
+
+  # プロフィールページ
+  get '/users/profile', to: 'users#show', as: :user_profile
+
+  root 'static_pages#home'
+  resources :posts do
+    resources :like, only: [:create, :destroy]
+  end
+  resources :likes, only: [:index]
 end
-resources :likes, only: [:index] #いいね一覧画面（タブ２）
 
-#signupページ
-get '/signup', to: 'users#new'
-post '/users', to: 'users#create'
-#login/logoutページ
-get '/login', to: 'sessions#new', as: :login #as以下はヘルパーメソッド（＿path）を生成
-post '/login', to: 'sessions#create', as: :sessions
-delete '/logout', to: 'sessions#destroy', as: :logout
-
-
-get "up" => "rails/health#show", as: :rails_health_check
-end
