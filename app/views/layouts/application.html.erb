@@ -12,9 +12,9 @@
 <body>
 
   <!-- ナビバー -->
-  <% unless devise_controller? || current_page?(root_path) %>
+  <% unless devise_controller? || current_page?(post_index_path) %>
     <nav class="navbar">
-      <%= link_to root_path, class: "nav-item #{current_page?(root_path) ? 'active' : ''}" do %>
+      <%= link_to post_index_path, class: "nav-item #{current_page?(post_index_path) ? 'active' : ''}" do %>
         <i class="icon-home"></i> ホーム
       <% end %>
 
