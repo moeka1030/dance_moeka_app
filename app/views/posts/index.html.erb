@@ -6,12 +6,12 @@
     <div class="post-item">
       <div class="post-thumbnail">
         <% if post.video.attached? %>
-          <video width="200" controls>
+          <video class="video-content" controls>
             <source src="<%= url_for(post.video) %>" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         <% else %>
-          <p>動画なし</p>
+          <p class="no-video">動画なし</p>
         <% end %>
       </div>
 
@@ -19,15 +19,17 @@
 
       <!-- いいねボタン（ログイン時のみ表示） -->
       <% if user_signed_in? %>
+      <div class="like-button-container">
         <% if post.likes.exists?(user: current_user) %>
           <%= link_to post_like_path(post), method: :delete, class: "like-button active" do %>
-            ❤️
+            🩷
           <% end %>
         <% else %>
           <%= link_to post_likes_path(post), method: :post, class: "like-button" do %>
             🤍
           <% end %>
         <% end %>
+      </div>
       <% end %>
 
     </div>
