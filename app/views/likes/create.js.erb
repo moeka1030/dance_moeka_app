@@ -1,0 +1,4 @@
+<%# 非同期処理（Ajax） %>
+$(".like-button-container[data-post-id='<%= @post.id %>']").html(`
+  <%= button_to "🩷", post_like_path(@post), method: :delete, class: "like-button active", remote: true %>
+`);

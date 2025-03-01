@@ -1,0 +1,3 @@
+$(".like-button-container[data-post-id='<%= @post.id %>']").html(`
+  <%= button_to "🤍", post_like_path(@post), method: :post, class: "like-button", remote: true %>
+`);

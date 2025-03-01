@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :posts do
     resources :likes, only: [:create, :destroy]
   end
+
+  # いいね一覧
   resources :likes, only: [:index]
 end
 

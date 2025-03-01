@@ -1,7 +1,7 @@
 <h1>Like</h1>
 
 <div class="post-grid">
-  <% current_user.liked_posts.each do |post| %>
+  <% @liked_posts.each do |post| %>
     <div class="post-item">
       <div class="post-thumbnail">
         <!-- 動画のサムネイル（再生ボタン付き） -->
@@ -15,7 +15,7 @@
       <p class="post-category"><%= post.genre %></p>
 
       <!-- いいねボタン -->
-      <%= link_to post_like_path(post), method: :delete, class: "like-button active" do %>
+      <%= link_to post_likes_path(post), method: :post, class: "like-button" do %>
         ❤️
       <% end %>
     </div>

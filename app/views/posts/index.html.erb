@@ -18,19 +18,16 @@
       <p class="post-category"><%= post.genre %></p>
 
       <!-- いいねボタン（ログイン時のみ表示） -->
-      <% if user_signed_in? %>
-      <div class="like-button-container">
-        <% if post.likes.exists?(user: current_user) %>
-          <%= link_to post_like_path(post), method: :delete, class: "like-button active" do %>
-            🩷
-          <% end %>
-        <% else %>
-          <%= link_to post_likes_path(post), method: :post, class: "like-button" do %>
-            🤍
-          <% end %>
-        <% end %>
-      </div>
-      <% end %>
+      <!-- いいねボタン（ログイン時のみ表示） -->
+<% if user_signed_in? %>
+  <div class="like-button-container" data-post-id="<%= post.id %>">
+    <% if current_user.likes.exists?(post_id: post.id) %>
+      <%= button_to "🩷", post_likes_path(post), method: :delete, class: "like-button active", remote: true %>
+    <% else %>
+      <%= button_to "🤍", post_likes_path(post), method: :post, class: "like-button", remote: true %>
+    <% end %>
+  </div>
+<% end %>
 
     </div>
   <% end %>

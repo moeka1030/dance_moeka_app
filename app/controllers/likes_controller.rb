@@ -3,28 +3,29 @@ class LikesController < ApplicationController
   before_action :set_post, only: [:create, :destroy]
 
   def create
-    @like = @post.likes.new(user: current_user)
-
-    if @like.save
-      redirect_back fallback_location: posts_path, notice: "いいねしました！"
-    else
-      redirect_back fallback_location: posts_path, alert: "いいねに失敗しました"
+    post = Post.find(params[:post_id])
+    current_user.likes.create(post: post)
+    respond_to do |format|
+      format.html { redirect_back fallback_location: root_path }
+      format.js # create.js.erb を探す,非同期処理
     end
   end
 
   def destroy
-    @like = @post.likes.find_by(user: current_user)
-
-    if @like&.destroy
-      redirect_back fallback_location: posts_path, notice: "いいねを取り消しました"
-    else
-      redirect_back fallback_location: posts_path, alert: "いいねの取り消しに失敗しました"
+    post = Post.find(params[:post_id])
+    like = current_user.likes.find_by(post: post.id)
+    like.destroy if like
+    respond_to do |format|
+      format.html { redirect_back fallback_location: root_path }
+      format.js # destroy.js.erb を探す
     end
   end
 
   def index
     @liked_posts = current_user.liked_posts.includes(:user)
   end
+
+  
 
   private
 
