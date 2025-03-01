@@ -1,23 +1,26 @@
 <h1>Like</h1>
 
 <div class="post-grid">
-  <% @liked_posts.each do |post| %>
-    <div class="post-item">
-      <div class="post-thumbnail">
-        <!-- 動画のサムネイル（再生ボタン付き） -->
-        <a href="<%= url_for(post.video) %>">
-          <img src="<%= post.thumbnail.attached? ? url_for(post.thumbnail) : 'default-thumbnail.png' %>" alt="動画">
-          <div class="play-button">▶️</div>
-        </a>
-      </div>
-
-      <!-- 投稿のカテゴリ（HIPHOPなど） -->
-      <p class="post-category"><%= post.genre %></p>
-
-      <!-- いいねボタン -->
-      <%= link_to post_likes_path(post), method: :post, class: "like-button" do %>
-        ❤️
+    <% @liked_posts.each do |post| %>
+  <div class="post-item">
+    <div class="post-thumbnail">
+      <% if post.video.attached? %>
+        <video class="video-content" controls>
+          <source src="<%= url_for(post.video) %>" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      <% else %>
+        <p class="no-video">動画なし</p>
       <% end %>
     </div>
-  <% end %>
+
+    <p class="post-category"><%= post.genre %></p>
+
+    <% if user_signed_in? %>
+      <div class="like-button-container" data-post-id="<%= post.id %>">
+        <%= render 'likes/like_button', post: post %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 </div>

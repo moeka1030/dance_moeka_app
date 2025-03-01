@@ -12,8 +12,8 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:post_id])
-    like = current_user.likes.find_by(post: post.id)
+    # post = Post.find(params[:post_id])
+    like = current_user.likes.find(params[:id])
     like.destroy if like
     respond_to do |format|
       format.html { redirect_back fallback_location: root_path }
@@ -22,7 +22,8 @@ class LikesController < ApplicationController
   end
 
   def index
-    @liked_posts = current_user.liked_posts.includes(:user)
+    @liked_posts = Post.joins(:likes).where(likes: { user_id: current_user.id }).distinct
+    # postテーブルとlikeテーブルのデータを紐づける、currentユーザがいいねしたデータのみの取得に限定
   end
 
   

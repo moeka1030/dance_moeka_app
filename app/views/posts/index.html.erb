@@ -14,21 +14,14 @@
           <p class="no-video">動画なし</p>
         <% end %>
       </div>
-
       <p class="post-category"><%= post.genre %></p>
 
       <!-- いいねボタン（ログイン時のみ表示） -->
-      <!-- いいねボタン（ログイン時のみ表示） -->
-<% if user_signed_in? %>
-  <div class="like-button-container" data-post-id="<%= post.id %>">
-    <% if current_user.likes.exists?(post_id: post.id) %>
-      <%= button_to "🩷", post_likes_path(post), method: :delete, class: "like-button active", remote: true %>
-    <% else %>
-      <%= button_to "🤍", post_likes_path(post), method: :post, class: "like-button", remote: true %>
-    <% end %>
-  </div>
-<% end %>
-
-    </div>
-  <% end %>
+      <% if user_signed_in? %>
+        <div class="like-button-container" data-post-id="<%= post.id %>">
+          <%= render 'likes/like_button', post: post %>
+        </div>
+      <% end %>
+    </div> 
+  <% end %>  
 </div>
