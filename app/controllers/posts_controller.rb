@@ -7,7 +7,8 @@ class PostsController < ApplicationController
     @posts = Post.includes(:user).order(created_at: :desc)
   end
 
-  def show # 投稿詳細ページ
+  def show # 投稿詳細ページ（投稿を押した時に大きく表示）
+    @post = Post.find(params[:id])
   end
 
   def new # 新規投稿ページ

@@ -1,22 +1,174 @@
+/* FontAwesome の読み込み */
+@import "font-awesome";
+
+
+/* ログインフォームのデザイン */
+.login-container {
+    max-width: 350px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: #63b3ed; /* 青色 */
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .login-button:hover {
+    background-color: #4299e1;
+  }
+  
+  /* ヘッダーデザイン */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .header h1 {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+  
+  .header-right {
+    margin-right: 10px;
+  }
+  
+  .logout-icon i {
+    font-size: 20px;
+    color: black;
+  }
+  
+  .login-button {
+    padding: 5px 10px;
+    background: blue;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    border-top: 2px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .nav-item {
+    text-decoration: none;
+    color: #A0A0A0;
+    font-size: 24px;
+    padding: 10px;
+  }
+  
+  .nav-item.active {
+    color: #FF6B6B;
+  }
+  
+  .icon-home::before {
+    content: "🏠" !important; /* ホームアイコン */
+    font-size: 24px;
+}
+
+.icon-heart::before {
+    content: "❤️" !important; /* いいねアイコン */
+    font-size: 24px;
+}
+
+.icon-user::before {
+    content: "👤" !important; /* プロフィールアイコン */
+    font-size: 24px;
+}
+
+
+
+.profile-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-info p {
+  margin: 5px 0;
+}
+
+.save-button {
+  padding: 10px 20px;
+  background-color: #63b3ed;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
 /* 投稿一覧のグリッドレイアウト */
 .post-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* 可変グリッド */
+  gap: 16px; /* 隙間 */
+  padding: 16px;
+  justify-content: center;
   }
   
   /* 投稿アイテム */
   .post-item {
-    background-color: white;
-    border-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px; /* 投稿の幅を指定 */
-    height: auto;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 16 / 9; /* 16:9 の比率を固定 */
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
+
+  /* 動画のサイズ調整 */
+.post-thumbnail video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
   
   /* 動画のスタイル */
   .video-content {
@@ -43,10 +195,33 @@
   
   /* いいねボタン */
   .like-button-container {
-    margin-top: 5px;
-    text-align: center;
+    // margin-top: 5px;
+    // text-align: center;
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
   }
   
+  .like-button-container:hover {
+    background: rgba(255, 255, 255, 1);
+  }
+
+  /* いいねボタンのサイズ */
+.like-button-container button {
+  font-size: 20px; /* ボタンの大きさ */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
   .like-button {
     font-size: 24px;
     cursor: pointer;
@@ -57,3 +232,5 @@
     color: red;
   }
   
+
+ 

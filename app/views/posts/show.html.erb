@@ -1,0 +1,28 @@
+<%# 投稿詳細ページ %>
+
+<h1>投稿詳細</h1>
+
+<div class="post-detail">
+  <div class="post-thumbnail">
+    <% if @post.video.attached? %>
+      <video class="video-content" controls>
+        <source src="<%= url_for(@post.video) %>" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    <% else %>
+      <p class="no-video">動画なし</p>
+    <% end %>
+  </div>
+
+  <h2><%= @post.genre %></h2>
+  <p><%= @post.description %></p>
+
+  <% if user_signed_in? %>
+    <div class="like-button-container">
+      <%= render 'likes/like_button', post: @post %>
+    </div>
+  <% end %>
+
+</div>
+
+<%= link_to "戻る", posts_path, class: "back-button" %>

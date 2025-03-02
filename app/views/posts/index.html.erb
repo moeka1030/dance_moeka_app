@@ -4,6 +4,7 @@
 <div class="post-grid">
   <% @posts.each do |post| %>
     <div class="post-item">
+      <a href="<%= post_path(post) %>"> <%# 投稿詳細ページへ%>
       <div class="post-thumbnail">
         <% if post.video.attached? %>
           <video class="video-content" controls>
