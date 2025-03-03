@@ -17,37 +17,39 @@
 </head>
 <body>
 
+    <!-- メインコンテンツ -->
+  <%= yield %>
+
   <!-- ナビバー -->
   <% unless devise_controller? || current_page?(root_path) %>
-    <nav class="navbar">
-      <%= link_to post_index_path, class: "nav-item #{current_page?(post_index_path) ? 'active' : ''}" do %>
-        <i class="icon-home"></i> ホーム
+    <footer class="tab-navbar">
+      <%= link_to post_index_path, class: "tab-item #{current_page?(post_index_path) ? 'active' : ''}" do %>
+        <i class="fas fa-home"></i>
       <% end %>
 
-      <%= link_to likes_path, class: "nav-item #{current_page?(likes_path) ? 'active' : ''}" do %>
-        <i class="icon-heart"></i> いいね
+      <%= link_to likes_path, class: "tab-item #{current_page?(likes_path) ? 'active' : ''}" do %>
+        <i class="fas fa-heart"></i>
       <% end %>
 
       <% if user_signed_in? %>  <!-- Deviseのメソッドを利用 -->
-        <%= link_to user_profile_path, class: "nav-item #{current_page?(user_profile_path) ? 'active' : ''}" do %>
-          <i class="icon-user"></i> プロフィール
-        <% end %>
+        <%= link_to user_profile_path, class: "tab-item #{current_page?(user_profile_path) ? 'active' : ''}" do %>
+        <i class="fas fa-user"></i>
+      <% end %>
 
-        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item logout-btn" %>
+        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "tab-item logout-btn" %>
 
       <% else %>
-        <%= link_to new_user_session_path, class: "nav-item" do %>
+        <%= link_to new_user_session_path, class: "tab-item" do %>
           <i class="icon-login"></i> ログイン
         <% end %>
-        <%= link_to new_user_registration_path, class: "nav-item" do %>
+        <%= link_to new_user_registration_path, class: "tab-item" do %>
           <i class="icon-signup"></i> サインアップ
         <% end %>
       <% end %>
-    </nav>
+    </footer>
   <% end %>
 
-  <!-- メインコンテンツ -->
-  <%= yield %>
+
 
 </body>
 </html>

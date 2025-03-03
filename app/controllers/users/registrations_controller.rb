@@ -4,12 +4,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_up_path_for(resource)
-    post_index # プロフィールページへリダイレクト
+    post_index_path # プロフィールページへリダイレクト
   end
 
   # プロフィール編集後のリダイレクト先を変更
   def after_update_path_for(resource)
-    post_index # プロフィールページへリダイレクト
+    post_index_path # プロフィールページへリダイレクト
   end
 
   private

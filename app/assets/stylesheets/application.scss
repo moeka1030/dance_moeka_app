@@ -1,6 +1,15 @@
 /* FontAwesome の読み込み */
 @import "font-awesome";
 
+/* 全体の背景色を変更 */
+body {
+  background-color: #d3dbe3; /* 好きな色に変更 */
+  color: #333; /* テキストの色（黒） */
+  font-family: Arial, sans-serif; /* フォントの指定 */
+  margin: 0;
+  padding: 0;
+}
+
 
 /* ログインフォームのデザイン */
 .login-container {
@@ -76,42 +85,91 @@
     text-decoration: none;
   }
   
-  .navbar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    background: #fff;
-    border-top: 2px solid #ddd;
-    padding: 10px 0;
-  }
-  
-  .nav-item {
-    text-decoration: none;
-    color: #A0A0A0;
-    font-size: 24px;
-    padding: 10px;
-  }
-  
-  .nav-item.active {
-    color: #FF6B6B;
-  }
-  
-  .icon-home::before {
-    content: "🏠" !important; /* ホームアイコン */
-    font-size: 24px;
+ /* タブバー（フッター） */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  padding: 10px 0;
+  border-top: 3px solid #ddd; /* 横棒を設置 */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+  z-index: 1000; /* 他の要素の上に表示 */
 }
 
-.icon-heart::before {
-    content: "❤️" !important; /* いいねアイコン */
-    font-size: 24px;
+/* タブアイテム */
+.tab-item {
+  text-decoration: none;
+  color: #A0A0A0;
+  font-size: 16px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: color 0.3s ease;
+  flex-grow: 1; /* 均等に幅を取る */
 }
 
-.icon-user::before {
-    content: "👤" !important; /* プロフィールアイコン */
-    font-size: 24px;
+/* 選択中のタブ */
+.tab-item.active {
+  color: #FF6B6B;
 }
+
+/* アイコンのスタイル */
+.tab-icon {
+  font-size: 24px;
+  margin-bottom: 5px; /* アイコンとテキストの間隔 */
+}
+
+/* FontAwesome アイコンのスタイル */
+.fas {
+  transition: color 0.3s ease;
+}
+
+.tab-item.active .fas {
+  color: #FF6B6B; /* アクティブ時に赤色 */
+}
+
+.tab-item .fas {
+  color: #A0A0A0; /* 通常時はグレー */
+}
+
+/* 選択中のタブ */
+.tab-item.active {
+  color: #FF6B6B; /* アクティブなタブを赤色に */
+}
+
+/* アイコンのスタイル */
+.tab-item i {
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.tab-item.active i {
+  color: #FF6B6B; /* アクティブ時のアイコンを赤色に */
+}
+
+
+/* アイコン */
+// .icon-home::before {
+//   content: "🏠";
+//   font-size: 24px;
+// }
+
+// .icon-heart::before {
+//   content: "❤️";
+//   font-size: 24px;
+// }
+
+// .icon-user::before {
+//   content: "👤";
+//   font-size: 24px;
+// }
+  
 
 
 
