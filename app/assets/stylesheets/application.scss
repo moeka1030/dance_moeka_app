@@ -1,6 +1,116 @@
 /* FontAwesome の読み込み */
 @import "font-awesome";
 
+
+// welcomeページ-----------------------------------------------------------
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 画面の高さいっぱいに */
+  text-align: center;
+  background-color: #f8f8f8; /* 背景色を少し淡く */
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* ボタン間の余白 */
+}
+
+.btn {
+  display: block;
+  width: 250px; /* ボタンの幅 */
+  padding: 15px;
+  text-align: center;
+  border-radius: 25px; /* 丸み */
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+}
+
+.btn:nth-child(1) {
+  background-color: #4aa3c1; /* 青色 */
+}
+
+.btn:nth-child(2) {
+  background-color: #e57373; /* 赤色 */
+}
+
+
+// サインアップページ-----------------------------------------------------------
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 画面の高さいっぱいに */
+  text-align: center;
+  background-color: #ffffff; /* 背景を白に */
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  width: 100%;
+  max-width: 300px; /* 幅を調整 */
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border-radius: 20px; /* 角丸 */
+  border: 2px solid #000;
+  font-size: 16px;
+  text-align: left;
+}
+
+.signup-button {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  background-color: #4aa3c1; /* 青色 */
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px; /* 角丸 */
+  cursor: pointer;
+  text-align: center;
+}
+
+.signup-button:hover {
+  background-color: #3b8aa1;
+}
+
+p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+p a {
+  color: #4aa3c1;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+
 /* 全体の背景色を変更 */
 body {
   background-color: #d3dbe3; /* 好きな色に変更 */
@@ -11,47 +121,70 @@ body {
 }
 
 
-/* ログインフォームのデザイン */
+/* ログインフォームのデザイン----------------------------------------------------------- */
 .login-container {
-    max-width: 350px;
-    margin: 50px auto;
-    padding: 20px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* 画面の高さいっぱいに */
+  text-align: center;
+  background-color: #ffffff; /* 背景を白に */
   }
   
   h2 {
     font-size: 24px;
+    font-weight: bold;
     margin-bottom: 20px;
   }
   
   .form-group {
+    width: 100%;
+    max-width: 300px; /* 幅を調整 */
     margin-bottom: 15px;
   }
   
   .input-field {
     width: 100%;
     padding: 12px;
+    border-radius: 20px; /* 角丸 */
     border: 2px solid #000;
-    border-radius: 20px;
     font-size: 16px;
-    text-align: center;
+    text-align: left;
   }
   
   .login-button {
     width: 100%;
+    max-width: 300px;
     padding: 12px;
-    border: none;
-    border-radius: 20px;
-    background-color: #63b3ed; /* 青色 */
+    background-color: #e57373; /* 赤色 */
     color: white;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px; /* 角丸 */
     cursor: pointer;
-    transition: background 0.3s;
+    text-align: center;
   }
   
   .login-button:hover {
-    background-color: #4299e1;
+    background-color: #d15050;
   }
+
+  /* 📌 リンクのデザイン */
+p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+p a {
+  color: #4aa3c1;
+  text-decoration: none;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
   
   /* ヘッダーデザイン */
   .header {
@@ -85,7 +218,7 @@ body {
     text-decoration: none;
   }
   
- /* タブバー（フッター） */
+ /* タブバー（フッター）----------------------------------------------------------- */
 .tab-bar {
   position: fixed;
   bottom: 0;
@@ -152,25 +285,6 @@ body {
 .tab-item.active i {
   color: #FF6B6B; /* アクティブ時のアイコンを赤色に */
 }
-
-
-/* アイコン */
-// .icon-home::before {
-//   content: "🏠";
-//   font-size: 24px;
-// }
-
-// .icon-heart::before {
-//   content: "❤️";
-//   font-size: 24px;
-// }
-
-// .icon-user::before {
-//   content: "👤";
-//   font-size: 24px;
-// }
-  
-
 
 
 .profile-container {
