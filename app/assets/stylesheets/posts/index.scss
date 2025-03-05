@@ -1,0 +1,42 @@
+/* 投稿一覧のレイアウト */
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 280px以上の大きさ */
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* 投稿アイテム */
+  .post-item {
+    width: 100%;
+    max-width: 400px; /* 投稿を少し大きく */
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* 動画のサイズ調整 */
+  .post-thumbnail {
+    width: 100%;
+    height: auto;
+    max-height: 300px; /* 高さを制限して統一感を出す */
+  }
+  
+  .video-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* サイズを調整しつつ、比率を維持 */
+    border-radius: 10px;
+  }
+  
+  /* いいねボタンの調整 */
+  .like-button-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  

@@ -4,4 +4,5 @@
 //= link_tree ../../../vendor/javascript .js
 //= link posts/show.css
 //= link_tree ../stylesheets
+//= link_directory ../stylesheets/users .css
 

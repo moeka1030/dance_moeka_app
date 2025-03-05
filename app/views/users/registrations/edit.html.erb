@@ -23,16 +23,16 @@
     <!-- プロフィール情報 -->
     <div class="profile-info">
       <div class="info-item">
-        <span>name</span> <span>: <%= f.text_field :name, class: "input-field" %></span>
+        <span>name</span> <span><%= f.text_field :name, class: "input-field" %></span>
       </div>
       <div class="info-item">
-        <span>genre</span> <span>: <%= f.select :genre, class: "input-field" %></span>
+        <span>genre</span> <span><%= f.text_field :genre, class: "input-field" %></span>
       </div>
       <div class="info-item">
-        <span>age</span> <span>: <%= f.number_field :age, class: "input-field" %></span>
+        <span>age</span> <span><%= f.number_field :age, class: "input-field" %></span>
       </div>
       <div class="info-item">
-        <span>experience</span> <span>: <%= f.number_field :experience, class: "input-field" %></span>
+        <span>experience</span> <span><%= f.number_field :experience, class: "input-field" %></span>
       </div>
     </div>
 

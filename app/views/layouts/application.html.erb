@@ -9,6 +9,10 @@
   <%= stylesheet_link_tag "application", media: "all" %>
   <%= javascript_include_tag "application" %>
 
+  <% if controller_name == "users" && action_name == "edit" %>
+  <%= stylesheet_link_tag "pages/profile_edit", media: "all" %>
+<% end %>
+
   <!-- `show` ページだけ `show.css.scss` を適用 -->
   <% if controller_name == "posts" && action_name == "show" %>
     <%= stylesheet_link_tag "posts/show", media: "all" %>

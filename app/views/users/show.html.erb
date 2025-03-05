@@ -2,6 +2,7 @@
 
 <h1>PROFILE</h1>
 <div class="profile-container">
+  <!-- ユーザー情報 -->
   <div class="profile-header">
     <div class="profile-image">
       <% if current_user&.profile_image&.attached? %>
@@ -17,7 +18,7 @@
       <p>experience : <%= current_user.experience %></p>
     </div>
     <div class="edit-button">
-      <%= link_to "プロフィール編集 ✏️", edit_user_registration_path, class: "edit-icon" %>
+      <%= link_to "✏️", edit_user_registration_path, class: "edit-icon" %>
     </div>
   </div>
 
@@ -26,11 +27,10 @@
     <% current_user.posts.each do |post| %>
       <div class="post-item">
         <% if post.video.attached? %>
-          <video width="200" controls>
+          <video controls>
             <source src="<%= url_for(post.video) %>" type="video/mp4">
           </video>
         <% end %>
-        <p><%= post.genre %></p>
       </div>
     <% end %> 
 
