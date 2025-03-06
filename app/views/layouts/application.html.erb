@@ -10,50 +10,38 @@
   <%= javascript_include_tag "application" %>
 
   <% if controller_name == "users" && action_name == "edit" %>
-  <%= stylesheet_link_tag "pages/profile_edit", media: "all" %>
-<% end %>
+    <%= stylesheet_link_tag "pages/profile_edit", media: "all" %>
+  <% end %>
 
-  <!-- `show` ページだけ `show.css.scss` を適用 -->
   <% if controller_name == "posts" && action_name == "show" %>
     <%= stylesheet_link_tag "posts/show", media: "all" %>
   <% end %>
-  
 </head>
+
 <body>
 
-    <!-- メインコンテンツ -->
+  <!-- メインコンテンツ -->
   <%= yield %>
 
-  <!-- ナビバー -->
-  <% unless devise_controller? || current_page?(root_path) %>
-    <footer class="tab-navbar">
-      <%= link_to post_index_path, class: "tab-item #{current_page?(post_index_path) ? 'active' : ''}" do %>
-        <i class="fas fa-home"></i>
-      <% end %>
+  <!-- フッター（タブナビゲーション） -->
+  <footer class="tab-navbar">
+    <%= link_to post_index_path, class: "tab-item #{current_page?(post_index_path) ? 'active' : ''}" do %>
+      <i class="fas fa-home"></i>
+    <% end %>
 
-      <%= link_to likes_path, class: "tab-item #{current_page?(likes_path) ? 'active' : ''}" do %>
-        <i class="fas fa-heart"></i>
-      <% end %>
+    <%= link_to likes_path, class: "tab-item #{current_page?(likes_path) ? 'active' : ''}" do %>
+      <i class="fas fa-heart"></i>
+    <% end %>
 
-      <% if user_signed_in? %>  <!-- Deviseのメソッドを利用 -->
-        <%= link_to user_profile_path, class: "tab-item #{current_page?(user_profile_path) ? 'active' : ''}" do %>
-        <i class="fas fa-user"></i>
-      <% end %>
+    <%= link_to user_profile_path, class: "tab-item #{current_page?(user_profile_path) ? 'active' : ''}" do %>
+      <i class="fas fa-user"></i>
+    <% end %>
+  </footer>
 
-        <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "tab-item logout-btn" %>
-
-      <% else %>
-        <%= link_to new_user_session_path, class: "tab-item" do %>
-          <i class="icon-login"></i> ログイン
-        <% end %>
-        <%= link_to new_user_registration_path, class: "tab-item" do %>
-          <i class="icon-signup"></i> サインアップ
-        <% end %>
-      <% end %>
-    </footer>
+  <!-- ログアウトボタン（ナビゲーション外） -->
+  <% if user_signed_in? %>
+    <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn" %>
   <% end %>
-
-
 
 </body>
 </html>

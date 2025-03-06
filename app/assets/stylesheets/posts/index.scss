@@ -1,19 +1,23 @@
 /* 投稿一覧のレイアウト */
 .post-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 280px以上の大きさ */
+    // grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 280px以上の大きさ */
+    grid-template-columns: repeat(4, 1fr); /* 4列レイアウト */
     gap: 20px;
     justify-content: center;
-    margin-top: 20px;
+    align-items: start;
+    // margin-top: 20px;
+    margin: 0 auto; /* 中央寄せ */
+    max-width: 1200px; /* 最大幅を指定（必要なら調整） */
   }
   
   /* 投稿アイテム */
   .post-item {
     width: 100%;
-    max-width: 400px; /* 投稿を少し大きく */
+    max-width: 600px; /* 投稿を少し大きく */
     background: #fff;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
   }

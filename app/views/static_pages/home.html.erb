@@ -3,8 +3,8 @@
 
   <div class="button-container">
     <% if user_signed_in? %>
-      <!-- ログイン済みのユーザーはプロフィールページへ -->
-      <a href="<%= user_profile_path %>" class="btn">Go to Profile</a>
+      <!-- ログイン済みのユーザーはHomeページへ -->
+      <a href="<%= post_index_path %>" class="btn">Go to Home</a>
     <% else %>
       <!-- 未ログインユーザーにはサインアップ & ログインを表示 -->
       <a href="<%= new_user_registration_path %>" class="btn">sign up</a>

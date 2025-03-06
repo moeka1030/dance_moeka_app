@@ -1,52 +1,52 @@
 /* FontAwesome の読み込み */
 @import "font-awesome";
-
+@import "static_pages/home";
 @import "users/profile_edit";  // プロフィールページ共通スタイル
 @import "posts/show";
 @import "posts/index";
 
-// welcomeページ-----------------------------------------------------------
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh; 
-  text-align: center;
-  background-color: #f8f8f8; /* 背景色を少し淡く */
-}
+// // welcomeページ-----------------------------------------------------------
+// .container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100vh; 
+//   text-align: center;
+//   background-color: #f8f8f8; /* 背景色を少し淡く */
+// }
 
-h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 30px;
-}
+// h1 {
+//   font-size: 24px;
+//   font-weight: bold;
+//   margin-bottom: 30px;
+// }
 
-.button-container {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* ボタン間の余白 */
-}
+// .button-container {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 15px; /* ボタン間の余白 */
+// }
 
-.btn {
-  display: block;
-  width: 250px; /* ボタンの幅 */
-  padding: 15px;
-  text-align: center;
-  border-radius: 25px; /* 丸み */
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-}
+// .btn {
+//   display: block;
+//   width: 250px; /* ボタンの幅 */
+//   padding: 15px;
+//   text-align: center;
+//   border-radius: 25px; /* 丸み */
+//   font-size: 18px;
+//   font-weight: bold;
+//   text-decoration: none;
+//   color: white;
+// }
 
-.btn:nth-child(1) {
-  background-color: #4aa3c1; /* 青色 */
-}
+// .btn:nth-child(1) {
+//   background-color: #4aa3c1; /* 青色 */
+// }
 
-.btn:nth-child(2) {
-  background-color: #e57373; /* 赤色 */
-}
+// .btn:nth-child(2) {
+//   background-color: #e57373; /* 赤色 */
+// }
 
 
 // サインアップページ-----------------------------------------------------------
@@ -245,8 +245,8 @@ p a:hover {
 
 
  /* タブバー（フッター）----------------------------------------------------------- */
-.tab-bar {
-  position: fixed;
+.tab-navbar {
+  position: fixed !important;
   bottom: 0;
   width: 100%;
   background-color: white;
@@ -256,17 +256,18 @@ p a:hover {
   align-items: center;
   border-top: 2px solid #ddd; /* 上線 */
   height: 60px; /* フッターの高さを確保 */
+  z-index: 1000; /* 他の要素より前面に */
 }
 
 /* タブアイテム */
 .tab-item {
   text-decoration: none;
   color: #A0A0A0;
-  font-size: 14px;
+  font-size: 24px;
   display: flex;
   flex-direction: column; /* アイコンとテキストを縦に配置 */
   align-items: center; /* アイコンを中央揃え */
-  justify-content: center;
+  // justify-content: center;
   width: 33%; /* 均等幅にする */
 }
 
@@ -294,8 +295,8 @@ p a:hover {
 
 /* アイコンのスタイル */
 .tab-item i {
-  font-size: 30px;
-  margin-bottom: 4px; /* アイコンとテキストの間隔 */
+  font-size: 24px;
+  margin-bottom: 5px; /* アイコンとテキストの間隔 */
   color: #A0A0A0; /* 通常時はグレー */
   transition: color 0.3s ease;
 }
