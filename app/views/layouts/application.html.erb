@@ -13,12 +13,26 @@
     <%= stylesheet_link_tag "pages/profile_edit", media: "all" %>
   <% end %>
 
-  <% if controller_name == "posts" && action_name == "show" %>
-    <%= stylesheet_link_tag "posts/show", media: "all" %>
+  <% if controller_name == "posts" && action_name == "index" %>
+  <%= stylesheet_link_tag "posts/index", media: "all" %>
+  <% elsif controller_name == "posts" && action_name == "show" %>
+  <%= stylesheet_link_tag "posts/show", media: "all" %>
   <% end %>
+
 </head>
 
 <body>
+
+  <!-- ヘッダー -->
+  <header class="header">
+    <%= yield(:header) %>
+
+    <!-- ログアウトボタン（ヘッダーの右上に配置） -->
+    <div class="header-right">
+      <%= link_to "logout", destroy_user_session_path, method: :delete, class: "logout-btn" %>
+    </div>
+  </header>
+
 
   <!-- メインコンテンツ -->
   <%= yield %>
@@ -37,11 +51,6 @@
       <i class="fas fa-user"></i>
     <% end %>
   </footer>
-
-  <!-- ログアウトボタン（ナビゲーション外） -->
-  <% if user_signed_in? %>
-    <%= button_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn" %>
-  <% end %>
 
 </body>
 </html>

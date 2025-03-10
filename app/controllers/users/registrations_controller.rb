@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :authenticate_user!, only: [:edit, :update]
+  # before_action :authenticate_user!, only: [:edit, :update]
 
   protected
 
@@ -7,9 +7,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     post_index_path # プロフィールページへリダイレクト
   end
 
+  def update_resource(resource, params)
+    params = params.to_h # ActionController::Parameters をハッシュに変換
+    params.delete(:current_password) # current_password を削除
+    resource.update_without_password(params)
+  end
+
   # プロフィール編集後のリダイレクト先を変更
   def after_update_path_for(resource)
-    post_index_path # プロフィールページへリダイレクト
+    user_profile_path # プロフィールページへリダイレクト
   end
 
   private

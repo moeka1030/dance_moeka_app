@@ -1,7 +1,9 @@
 <%# homeのビュー %>
-<h1>HOME</h1>
-
-<div class="post-grid">
+<header class="header">
+    <h1>Home</h1>
+</header>
+<div class="post-index">
+  <div class="post-grid">
   <% @posts.each do |post| %>
     <div class="post-item">
       <a href="<%= post_path(post) %>"> <%# 投稿詳細ページへ%>
@@ -25,4 +27,5 @@
       <% end %>
     </div> 
   <% end %>  
+  </div>
 </div>

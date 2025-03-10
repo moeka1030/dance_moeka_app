@@ -1,52 +1,11 @@
 /* FontAwesome の読み込み */
 @import "font-awesome";
 @import "static_pages/home";
-@import "users/profile_edit";  // プロフィールページ共通スタイル
+@import "users/registrations/edit";  
+@import "likes/index";
+@import "users/show";
 @import "posts/show";
 @import "posts/index";
-
-// // welcomeページ-----------------------------------------------------------
-// .container {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   height: 100vh; 
-//   text-align: center;
-//   background-color: #f8f8f8; /* 背景色を少し淡く */
-// }
-
-// h1 {
-//   font-size: 24px;
-//   font-weight: bold;
-//   margin-bottom: 30px;
-// }
-
-// .button-container {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 15px; /* ボタン間の余白 */
-// }
-
-// .btn {
-//   display: block;
-//   width: 250px; /* ボタンの幅 */
-//   padding: 15px;
-//   text-align: center;
-//   border-radius: 25px; /* 丸み */
-//   font-size: 18px;
-//   font-weight: bold;
-//   text-decoration: none;
-//   color: white;
-// }
-
-// .btn:nth-child(1) {
-//   background-color: #4aa3c1; /* 青色 */
-// }
-
-// .btn:nth-child(2) {
-//   background-color: #e57373; /* 赤色 */
-// }
 
 
 // サインアップページ-----------------------------------------------------------
@@ -198,15 +157,21 @@ p a:hover {
     font-size: 20px;
     font-weight: bold;
     border-bottom: 2px solid #ddd; /* 下線 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
   }
   
   .header h1 {
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 10px;
   }
   
   .header-right {
-    margin-right: 10px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
   }
   
   .logout-icon i {
@@ -225,11 +190,13 @@ p a:hover {
 
   /* ログアウトボタン----------------------------------------------------------- */
 .logout-btn {
-  background: none;
-  border: none;
-  font-size: 18px;
+  text-decoration: none; /* 下線消す */
+  font-size: 20px;
   color: #A0A0A0;
-  cursor: pointer;
+  // cursor: pointer;
+  position: absolute;
+  top: 30px; 
+  right: 20px;
 }
 
 .logout-btn:hover {
@@ -295,7 +262,7 @@ p a:hover {
 
 /* アイコンのスタイル */
 .tab-item i {
-  font-size: 24px;
+  font-size: 25px;
   margin-bottom: 5px; /* アイコンとテキストの間隔 */
   color: #A0A0A0; /* 通常時はグレー */
   transition: color 0.3s ease;
@@ -312,42 +279,6 @@ p a:hover {
 }
 
 
-
-
-/* 投稿一覧のグリッドレイアウト----------------------------------------------------------- */
-// .post-grid {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 280px以上の大きさ */
-//   gap: 20px;
-//   justify-content: center;
-//   margin-top: 20px;
-//   }
-  
-//   /* 投稿アイテム */
-//   .post-item {
-//   width: 100%;
-//   max-width: 400px; /* 投稿を少し大きく */
-//   background: #fff;
-//   border-radius: 10px;
-//   padding: 10px;
-//   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-//   text-align: center;
-//   }
-
-  /* 動画のサイズ調整 */
-// .post-thumbnail video {
-//   width: 100%;
-//   height: auto;
-//   max-height: 300px; /* 高さを制限して統一感を出す */
-// }
-  
-//   /* 動画のスタイル */
-//   .video-content {
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover; /* サイズを調整しつつ、比率を維持 */
-//   border-radius: 10px;
-//   }
   
   /* 「動画なし」の表示 */
   .no-video {
@@ -377,14 +308,14 @@ p a:hover {
 
   /* いいねボタンのサイズ */
 .like-button-container button {
-  font-size: 20px; /* ボタンの大きさ */
+  font-size: 22px; /* ボタンの大きさ */
   background: none;
   border: none;
   cursor: pointer;
 }
 
   .like-button {
-    font-size: 24px;
+    font-size: 26px;
     cursor: pointer;
     background: none;
     border: none;
@@ -393,81 +324,3 @@ p a:hover {
     color: red;
   }
   
-
- 
-  /* プロフィールページ全体のレイアウト----------------------------------------------------------- */
-.profile-container {
-  max-width: 1200px;
-  margin: 0 auto; /* 中央揃え */
-  padding: 20px;
-}
-
-/* ヘッダー（プロフィール情報部分） */
-.profile-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.profile-image img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.profile-info {
-  flex-grow: 1;
-  margin-left: 3px;
-  font-size: 20px;
-  text-align: left; /* 左揃え */
-}
-
-.edit-button {
-  margin-left: 10px; /* 余白を少しだけ追加 */
-}
-
-.post-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(188px, 1fr));
-  gap: 16px;
-  justify-content: center;
-  margin-top: 20px;
-  align-items: center; /* 縦方向の中央揃え */
-}
-
-/* 投稿アイテム */
-.post-item {
-  width: 188px;
-  height: 188px;
-  background-color: #fff;
-  border: 2px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 18px;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-/* 投稿内の動画 */
-.post-item video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* 新規投稿ボタン */
-.new-post {
-  font-size: 36px;
-  color: #aaa;
-  cursor: pointer;
-}
-
-.new-post:hover {
-  color: #FF6B6B;
-}
-
-

@@ -1,7 +1,5 @@
 <%# 投稿詳細ページ %>
 
-
-
 <div class="post-detail">
   <div class="post-thumbnail">
     <% if @post.video.attached? %>
@@ -22,7 +20,7 @@
       <%= render 'likes/like_button', post: @post %>
     </div>
   <% end %>
-
+<%= link_to "戻る", posts_path, class: "back-button" %>
 </div>
 
-<%= link_to "戻る", posts_path, class: "back-button" %>
+

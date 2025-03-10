@@ -1,8 +1,12 @@
-<h1>Like</h1>
 
-<div class="post-grid">
+<header class="header">
+    <h1>Like</h1>
+</header>
+<div class="like-index">
+  <div class="post-grid">
     <% @liked_posts.each do |post| %>
   <div class="post-item">
+    <a href="<%= post_path(post) %>"> 
     <div class="post-thumbnail">
       <% if post.video.attached? %>
         <video class="video-content" controls>
@@ -22,5 +26,6 @@
       </div>
     <% end %>
   </div>
-<% end %>
+  <% end %>
+  </div>
 </div>

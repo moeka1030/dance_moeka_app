@@ -11,6 +11,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  position: relative; /* 相対位置で中のボタンの絶対位置指定可能に */
 }
 
 /* 投稿詳細の動画デザイン */
@@ -41,7 +43,7 @@
 }
 
 .post-detail p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: #555;
   margin-top: 10px;
 }
@@ -54,10 +56,13 @@
 
 /* 戻るボタン */
 .post-detail .back-button {
+  position: absolute; /* 親の左上固定 */
+  bottom: 10px; /* 上から10px */
+  left: 10px; /* 左から10px */
   display: block;
   margin: 20px auto;
   padding: 12px 24px;
-  background: #ff6b81;
+  background: #b5b2b2;
   color: white;
   border: none;
   border-radius: 5px;
@@ -69,5 +74,5 @@
 }
 
 .post-detail .back-button:hover {
-  background: #ff4757;
+  background: #f18484;
 }

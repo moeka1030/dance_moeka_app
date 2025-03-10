@@ -1,5 +1,5 @@
 /* 投稿一覧のレイアウト */
-.post-index .post-grid {
+.like-index .post-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4列固定にする */
     gap: 5px; /* 左右のスペースをなくす */
@@ -8,7 +8,7 @@
   }
   
   /* 投稿アイテム */
-  .post-index .post-item {
+  .like-index .post-item {
     width: 100%;
     min-height: 280px; /* 高さを小さくする */
     aspect-ratio: 4 / 5; /* 縦横比を適切に */
@@ -23,7 +23,7 @@
   }
   
   /* 動画のサイズ調整 */
-  .post-index .post-thumbnail {
+  .like-index .post-thumbnail {
     width: 100%;
     aspect-ratio: 16 / 9; /* 適切な動画比率を維持 */
     display: flex;
@@ -31,7 +31,7 @@
     justify-content: center;
   }
   
-  .post-index .video-content {
+  .like-index .video-content {
     width: 100%;
     height: 100%;
     object-fit: contain; /* 切り取らずに表示 */
@@ -39,8 +39,7 @@
   }
 
   /* ジャンルやテキストのデザイン */
-  .post-index .post-info {
-
+  .like-index .post-info {
   margin-top: 5px; /* 余白を小さく */
     font-size: 14px;
     font-weight: bold;
@@ -49,7 +48,7 @@
 
   
   /* いいねボタンの調整 */
-  .post-index .like-button-container {
+  .like-index .like-button-container {
     margin-top: 10px;
     display: flex;
     justify-content: center;

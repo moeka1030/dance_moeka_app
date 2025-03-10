@@ -1,0 +1,88 @@
+ /* プロフィールページ全体のレイアウト----------------------------------------------------------- */
+ .profile-container {
+    max-width: 1200px;
+    margin: 0 auto; /* 中央揃え */
+    padding: 20px;
+    min-height: calc(100vh - 60px); /* フッターを除いた高さ */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* ヘッダー（プロフィール情報部分） */
+  .profile-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 60px;
+    text-align: center;
+    gap: 12px; 
+  }
+  
+  .profile-info p, .profile-info span {
+    margin: 12px 0;
+  }
+  
+  .edit-button {
+    display: inline-block;
+    margin-left: 12px; /* 余白を少しだけ追加 */
+  }
+  
+  .post-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+    justify-content: center;
+    margin-top: 20px;
+    align-items: center; /* 縦方向の中央揃え */
+  }
+  
+  /* 投稿アイテム */
+  .post-item {
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* 投稿内の動画 */
+  .post-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* 新規投稿ボタン */
+  .new-post {
+    font-size: 40px;
+    color: #aaa;
+    cursor: pointer;
+  }
+  
+  .new-post:hover {
+    color: #FF6B6B;
+  }
+  
+  
+  
