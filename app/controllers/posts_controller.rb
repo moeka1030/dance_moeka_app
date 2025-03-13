@@ -13,6 +13,9 @@ class PostsController < ApplicationController
 
   def new # 新規投稿ページ
     @post = Post.new
+    if @post.save
+      redirect_to user_profile_path, notice: '投稿が作成されました'
+    end
   end
 
   def create # 新規投稿

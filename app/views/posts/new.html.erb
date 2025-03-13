@@ -1,7 +1,10 @@
 <%# 新規投稿フォームのビュー %>
+<header class="header">
+    <h1>PROFILE</h1>
+</header>
 
-<h1>PROFILE</h1>
-
+<div class="post-new">
+<div class="post-form-container">
 <!-- 動画アップロード -->
 <%= form_with model: @post, url: posts_path, method: :post, local: true, multipart: true do |f| %>
   <div style="border: 1px solid black; padding: 10px; text-align: center;">
@@ -29,3 +32,5 @@
     <%= f.submit "Create", style: "background-color: deepskyblue; color: white; padding: 10px; border-radius: 10px; border: none;" %>
   </div>
 <% end %>
+</div>
+</div>

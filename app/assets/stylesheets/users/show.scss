@@ -1,86 +1,92 @@
  /* プロフィールページ全体のレイアウト----------------------------------------------------------- */
- .profile-container {
-    max-width: 1200px;
-    margin: 0 auto; /* 中央揃え */
-    padding: 20px;
-    min-height: calc(100vh - 60px); /* フッターを除いた高さ */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+ .users-show .profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
   }
   
   /* ヘッダー（プロフィール情報部分） */
-  .profile-header {
+  .users-show .profile-header {
+    background: #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    margin-bottom: 20px;
+    position: relative;
+    margin-bottom: 30px;
   }
   
-  .profile-image img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+  .users-show .profile-image img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid black; /* アイコンの黒枠 */
   }
   
-  .profile-info {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    font-size: 60px;
-    text-align: center;
-    gap: 12px; 
+  .users-show .profile-info {
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.8;
+
+   display: flex;
+  flex-direction: column;
+  gap: 2px; /* 行間の隙間を少しだけ */
+  flex: 1; /* 残り幅を使う */
   }
   
-  .profile-info p, .profile-info span {
-    margin: 12px 0;
+  /* 各行のpタグ */
+.users-show .profile-info p {
+  margin: 0; /* デフォルトの余白を消す */
+  display: flex;
+  align-items: center; /* ✏️ と縦揃え */
+  justify-content: space-between; /* テキストと編集ボタンの距離 */
+}
+  
+  .users-show .edit-button {
+    margin-left: 10px;
+    font-size: 18px;
+    cursor: pointer;
   }
   
-  .edit-button {
-    display: inline-block;
-    margin-left: 12px; /* 余白を少しだけ追加 */
-  }
-  
-  .post-container {
+  .users-show .post-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 12px;
-    justify-content: center;
-    margin-top: 20px;
-    align-items: center; /* 縦方向の中央揃え */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* レスポンシブ */
+    gap: 15px;
+    width: 100%;
   }
   
   /* 投稿アイテム */
-  .post-item {
-    width: 150px;
-    height: 150px;
+  .users-show .post-item {
+    width: 100%;
+    aspect-ratio: 1/1; /* 正方形 */
     background-color: #fff;
-    border: 2px solid #ddd;
+    border-radius: 20px; /* 丸み */
+    border: 1px solid #ddd;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    font-size: 24px;
-    border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
   /* 投稿内の動画 */
-  .post-item video {
+  .users-show .post-item video {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
   
   /* 新規投稿ボタン */
-  .new-post {
-    font-size: 40px;
-    color: #aaa;
-    cursor: pointer;
+  .users-show .new-post {
+  font-size: 36px;
+  color: #555;
+  cursor: pointer;
   }
   
-  .new-post:hover {
+  .users-show .new-post:hover {
     color: #FF6B6B;
   }
   

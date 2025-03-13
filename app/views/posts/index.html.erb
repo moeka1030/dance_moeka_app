@@ -2,7 +2,7 @@
 <header class="header">
     <h1>Home</h1>
 </header>
-<div class="post-index">
+<div class="posts-index">
   <div class="post-grid">
   <% @posts.each do |post| %>
     <div class="post-item">
@@ -13,8 +13,7 @@
             <source src="<%= url_for(post.video) %>" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-        <% else %>
-          <p class="no-video">動画なし</p>
+       
         <% end %>
       </div>
       <p class="post-category"><%= post.genre %></p>

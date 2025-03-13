@@ -2,7 +2,7 @@
 <header class="header">
     <h1>Like</h1>
 </header>
-<div class="like-index">
+<div class="likes-index">
   <div class="post-grid">
     <% @liked_posts.each do |post| %>
   <div class="post-item">
@@ -13,11 +13,8 @@
           <source src="<%= url_for(post.video) %>" type="video/mp4">
           Your browser does not support the video tag.
         </video>
-      <% else %>
-        <p class="no-video">動画なし</p>
       <% end %>
     </div>
-
     <p class="post-category"><%= post.genre %></p>
 
     <% if user_signed_in? %>

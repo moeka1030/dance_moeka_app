@@ -2,7 +2,9 @@
 <header class="header">
     <h1>PROFILE</h1>
 </header>
+<div class="users-show">
 <div class="profile-container">
+  
   <!-- ユーザー情報 -->
   <div class="profile-header">
     <div class="profile-image">
@@ -16,12 +18,13 @@
       <p>name : <%= current_user.name %></p>
       <p>genre : <%= current_user.genre %></p>
       <p>age : <%= current_user.age %></p>
-      <p>experience : <%= current_user.experience %></p>
-    </div>
-    <div class="edit-button">
-      <%= link_to "✏️", edit_user_registration_path, class: "edit-icon" %>
+      <p>
+        experience : <%= current_user.experience %>
+        <%= link_to "✏️", edit_user_registration_path, class: "edit-button" %> <!-- ここに移動 -->
+      </p>
     </div>
   </div>
+</div>
 
   <!-- 投稿一覧 -->
   <div class="post-container">
@@ -42,4 +45,5 @@
       <% end %>
     </div>
   </div>
+</div>
 </div>

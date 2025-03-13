@@ -13,6 +13,7 @@
 
 //= link posts/show.css
 //= link posts/index.css
+//= link posts/new.css
 
 //= link users/registrations/edit.css
 //= link users/show.css

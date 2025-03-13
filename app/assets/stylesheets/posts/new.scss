@@ -1,0 +1,67 @@
+/* 全体中央揃え */
+.post-new .post-form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  /* 動画選択部分 */
+  .post-new .post-form-container .video-upload {
+    margin-bottom: 30px;
+  }
+  
+  .post-new .post-form-container .video-upload .circle {
+    width: 100px;
+    height: 100px;
+    background-color: lightgray;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px auto;
+    font-size: 40px;
+  }
+  
+  /* テキストエリアとラベル */
+  .post-new .post-form-container label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+    color: gray;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .post-new .post-form-container textarea,
+  .post-form-container input[type="text"] {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 16px; 
+  }
+  
+  /* ボタン */
+  .post-new .post-form-container input[type="submit"] {
+    background-color: deepskyblue;
+  color: white;
+  padding: 14px; /* 高さアップ */
+  border-radius: 12px;
+  border: none;
+  width: 100%; /* 横幅いっぱい */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px; /* 文字も大きく */
+  }
+  
+  .post-new .post-form-container input[type="submit"]:hover {
+    background-color: dodgerblue;
+  }
+  
