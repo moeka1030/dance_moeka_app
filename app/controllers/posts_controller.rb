@@ -13,13 +13,9 @@ class PostsController < ApplicationController
 
   def new # 新規投稿ページ
     @post = Post.new
-    if @post.save
-      redirect_to user_profile_path, notice: '投稿が作成されました'
-    end
   end
 
   def create # 新規投稿
-    @post = Post.new(post_params)
     @post = current_user.posts.build(post_params) # `build` を使って current_user に関連付ける
     if @post.save
       redirect_to user_profile_path, notice: '投稿が作成されました'
@@ -33,7 +29,7 @@ class PostsController < ApplicationController
 
   def update # 投稿更新
     if @post.update(post_params)
-      redirect_to posts_path, notice: '投稿を更新しました'
+      redirect_to user_profile_path, notice: '投稿を更新しました'
     else
       render :edit
     end
@@ -41,7 +37,7 @@ class PostsController < ApplicationController
 
   def destroy # 投稿削除
     @post.destroy
-    redirect_to posts_path, notice: '投稿が削除されました'
+    redirect_to user_profile_path, notice: '投稿が削除されました'
   end
 
   private

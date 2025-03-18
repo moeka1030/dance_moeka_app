@@ -1,7 +1,10 @@
 <%# homeのビュー %>
-<header class="header">
-    <h1>Home</h1>
-</header>
+
+<% content_for :header do %>
+  Home
+<% end %>
+
+
 <div class="posts-index">
   <div class="post-grid">
   <% @posts.each do |post| %>

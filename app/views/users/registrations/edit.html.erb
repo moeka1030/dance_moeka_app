@@ -1,7 +1,7 @@
 <%# プロフィール編集ページ %>
-<header class="header">
-    <h1>PROFILE</h1>
-</header>
+<% content_for :header do %>
+  Profile
+<% end %>
 
 <div class="users-edit">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :patch, multipart: true }) do |f| %>

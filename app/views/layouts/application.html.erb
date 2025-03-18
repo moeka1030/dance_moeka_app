@@ -7,37 +7,38 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <%= stylesheet_link_tag "application", media: "all" %>
-  <%= javascript_include_tag "application" %>
+ 
+  <%= javascript_importmap_tags %> 
 
   <% if controller_name == "users" && action_name == "edit" %>
     <%= stylesheet_link_tag "pages/profile_edit", media: "all" %>
   <% end %>
-
   <% if controller_name == "posts" && action_name == "index" %>
   <%= stylesheet_link_tag "posts/index", media: "all" %>
   <% elsif controller_name == "posts" && action_name == "show" %>
   <%= stylesheet_link_tag "posts/show", media: "all" %>
   <% end %>
-
+  
 </head>
 
 <body>
 
   <!-- ヘッダー -->
-  <header class="header">
-    <%= yield(:header) %>
-
-    <!-- ログアウトボタン（ヘッダーの右上に配置） -->
-    <div class="header-right">
-      <%= link_to "logout", destroy_user_session_path, method: :delete, class: "logout-btn" %>
-    </div>
-  </header>
+<header class="header">
+  <div class="header-title">
+    <%= yield(:header) %> <!-- 動的タイトル -->
+  </div>
+  <div class="header-right">
+    <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "logout-btn" %>
+  </div>
+</header>
 
 
   <!-- メインコンテンツ -->
   <%= yield %>
 
   <!-- フッター（タブナビゲーション） -->
+<% unless content_for?(:hide_footer) %>
   <footer class="tab-navbar">
     <%= link_to post_index_path, class: "tab-item #{current_page?(post_index_path) ? 'active' : ''}" do %>
       <i class="fas fa-home"></i>
@@ -51,6 +52,7 @@
       <i class="fas fa-user"></i>
     <% end %>
   </footer>
+<% end %>
 
 </body>
 </html>

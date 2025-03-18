@@ -153,15 +153,22 @@ p a:hover {
   .header {
     width: 100%;
     background-color: white;
-    padding: 10px 0;
-    text-align: center;
+    padding: 10px 20px;
     font-size: 20px;
     font-weight: bold;
-    border-bottom: 2px solid #ddd; /* 下線 */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+    border-bottom: 2px solid #ddd;
+    display: flex; /* 横並び */
+    justify-content: space-between; /* 左右に振り分け */
+    align-items: center; /* 縦中央 */
+    box-sizing: border-box; /* padding含めた幅計算 */
+
+    bottom: 60px; /* フッターの高さを確保 */
+    z-index: 1000;
+  }
+
+  .header-title {
+    margin: 0; /* 余白なし */
+    font-size: 25px;
   }
   
   .header h1 {
@@ -170,9 +177,8 @@ p a:hover {
   }
   
   .header-right {
-    position: absolute;
-    top: 10px;
-    right: 20px;
+  display: flex;
+  align-items: center; /* ボタンを縦中央に */
   }
   
   .logout-icon i {
@@ -191,13 +197,15 @@ p a:hover {
 
   /* ログアウトボタン----------------------------------------------------------- */
 .logout-btn {
-  text-decoration: none; /* 下線消す */
-  font-size: 20px;
+  font-size: 16px;
   color: #A0A0A0;
-  // cursor: pointer;
-  position: absolute;
-  top: 35px; 
-  right: 20px;
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: white;
+  cursor: pointer;
+  margin: 0;
 }
 
 .logout-btn:hover {
