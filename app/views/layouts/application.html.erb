@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= yield(:title) || "MyApp" %></title>
+  <title><%= yield(:title)%></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-  <%= stylesheet_link_tag "application", media: "all" %>
+
+  <%= stylesheet_link_tag "application", media: "all" %>   <%# application.cssの読み込み %>
  
-  <%= javascript_importmap_tags %> 
+  <%= javascript_importmap_tags %>   <%# javaのインポート管理 %>
 
   <% if controller_name == "users" && action_name == "edit" %>
-    <%= stylesheet_link_tag "pages/profile_edit", media: "all" %>
+    <%= stylesheet_link_tag "users/registrations/edit", media: "all" %>
   <% end %>
+
   <% if controller_name == "posts" && action_name == "index" %>
   <%= stylesheet_link_tag "posts/index", media: "all" %>
   <% elsif controller_name == "posts" && action_name == "show" %>
   <%= stylesheet_link_tag "posts/show", media: "all" %>
   <% end %>
-  
 </head>
 
 <body>
-
   <!-- ヘッダー -->
 <header class="header">
   <div class="header-title">
@@ -33,12 +33,11 @@
   </div>
 </header>
 
-
   <!-- メインコンテンツ -->
   <%= yield %>
 
-  <!-- フッター（タブナビゲーション） -->
-<% unless content_for?(:hide_footer) %>
+  <!-- フッター -->
+<% unless content_for?(:hide_footer) %> <!--ログイン画面などでは非表示-->
   <footer class="tab-navbar">
     <%= link_to post_index_path, class: "tab-item #{current_page?(post_index_path) ? 'active' : ''}" do %>
       <i class="fas fa-home"></i>

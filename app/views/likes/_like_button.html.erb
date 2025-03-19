@@ -1,7 +1,6 @@
-<%# いいねのボタン機能 %>
-
+<%# いいねされているかどうかにより表示を変更 %>
 <% if current_user.likes.exists?(post: post) %>
-  <%= button_to "🩷", post_like_path(post, current_user.likes.find_by(post: post).id), method: :delete, class: "liked-button", remote: true %>
+  <%= button_to "🩷", post_like_path(post, current_user.likes.find_by(post: post).id), method: :delete, remote: true %> <!--非同期処理を有効に-->
 <% else %>
-  <%= button_to "🤍", post_likes_path(post), method: :post, class: "unliked-button", remote: true %>
+  <%= button_to "🤍", post_likes_path(post), remote: true %>
 <% end %>

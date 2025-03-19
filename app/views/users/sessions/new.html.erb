@@ -1,12 +1,12 @@
 <%# ログインページ %>
 <% content_for :hide_footer, true %>
+
 <h2>Let’s login!</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { method: :post }) do |f| %>
   <div class="login-container">
 
-    <!-- エラーメッセージ -->
-    <% if resource.errors.any? %>
+    <% if resource.errors.any? %>   <!-- エラーメッセージ -->
       <div class="error-messages">
         <ul>
           <% resource.errors.full_messages.each do |message| %>
@@ -16,18 +16,15 @@
       </div>
     <% end %>
 
-    <!-- メールアドレス -->
-    <div class="form-group">
+    <div class="form-group">   <!-- メールアドレス -->
       <%= f.email_field :email, placeholder: "email address", class: "input-field" %>
     </div>
 
-    <!-- パスワード -->
-    <div class="form-group">
+    <div class="form-group">   <!-- パスワード -->
       <%= f.password_field :password, placeholder: "password", class: "input-field" %>
     </div>
 
-    <!-- ログインボタン -->
-    <div class="form-group">
+    <div class="form-group">  <!-- ログインボタン -->
       <%= f.submit "login", class: "login-button" %>
     </div>
   </div>

@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-require_relative "../config/application"
+require_relative "../config/application" #Railsアプリの設定を読み込み（bootstrapを動かせるように）
 require "importmap/commands"

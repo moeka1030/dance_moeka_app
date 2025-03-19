@@ -1,4 +1,4 @@
-
+<%# いいね一覧 %>
 <% content_for :header do %>
   Like
 <% end %>
@@ -7,9 +7,9 @@
   <div class="post-grid">
     <% @liked_posts.each do |post| %>
   <div class="post-item">
-    <a href="<%= post_path(post) %>"> 
+    <a href="<%= post_path(post) %>"> <!--post/showへのリンク-->
     <div class="post-thumbnail">
-      <% if post.video.attached? %>
+      <% if post.video.attached? %> <!--Active Storage使用の際の動画チェック-->
         <video class="video-content" controls>
           <source src="<%= url_for(post.video) %>" type="video/mp4">
           Your browser does not support the video tag.
@@ -20,7 +20,7 @@
 
     <% if user_signed_in? %>
       <div class="like-button-container" data-post-id="<%= post.id %>">
-        <%= render 'likes/like_button', post: post %>
+        <%= render 'likes/like_button', post: post %> <!--部分テンプレート表示-->
       </div>
     <% end %>
   </div>

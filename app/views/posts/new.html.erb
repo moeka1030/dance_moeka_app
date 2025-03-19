@@ -5,8 +5,8 @@
 
 <div class="post-new">
 <div class="post-form-container">
-<!-- 動画アップロード -->
-<%= form_with model: @post, url: posts_path, method: :post, local: true, multipart: true do |f| %>
+
+<%= form_with model: @post, url: posts_path, method: :post, local: true, multipart: true do |f| %> <!-- 動画アップロード -->
   <div style="border: 1px solid black; padding: 10px; text-align: center;">
     <%= f.label :video, "動画を選択" %>
       <div style="width: 50px; height: 50px; background-color: lightgray; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: auto;">
@@ -15,20 +15,17 @@
     <%= f.file_field :video, accept: "video/*" %>
   </div>
 
-  <!-- ジャンル入力 -->
-  <div>
+  <div> <!-- ジャンル入力 -->
     <%= f.label :genre, "Genre", style: "color: gray;" %>
     <%= f.text_area :genre%>
   </div>
 
-  <!-- 説明入力 -->
-  <div>
+  <div>  <!-- 説明入力 -->
     <%= f.label :description, "Detail of Contents", style: "color: gray;" %>
     <%= f.text_area :description %>
   </div>
 
-  <!-- 投稿ボタン -->
-  <div>
+  <div>  <!-- 投稿ボタン -->
     <%= f.submit "Create", style: "background-color: deepskyblue; color: white; padding: 10px; border-radius: 10px; border: none;" %>
   </div>
 <% end %>

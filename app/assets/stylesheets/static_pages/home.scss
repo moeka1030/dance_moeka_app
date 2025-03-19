@@ -1,4 +1,4 @@
-// welcomeページ-----------------------------------------------------------
+// welcomeページ
 .container {
     display: flex;
     flex-direction: column;
@@ -6,7 +6,7 @@
     justify-content: center;
     height: 100vh; 
     text-align: center;
-    background-color: #f8f8f8; /* 背景色を少し淡く */
+    background-color: #f8f8f8; 
   }
   
   h1 {
@@ -18,17 +18,17 @@
   .button-container {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 水平方向の中央揃え */
-    align-items: center; /* これを追加 */
-    gap: 15px; /* ボタン間の余白 */
+    justify-content: center; 
+    align-items: center; 
+    gap: 15px; 
   }
   
   .btn {
     display: block;
-    width: 250px; /* ボタンの幅 */
+    width: 250px;
     padding: 15px;
     text-align: center;
-    border-radius: 25px; /* 丸み */
+    border-radius: 25px;
     font-size: 18px;
     font-weight: bold;
     text-decoration: none;
@@ -36,9 +36,9 @@
   }
   
   .btn:nth-child(1) {
-    background-color: #4aa3c1; /* 青色 */
+    background-color: #4aa3c1; 
   }
   
   .btn:nth-child(2) {
-    background-color: #e57373; /* 赤色 */
+    background-color: #e57373;
   }

@@ -1,9 +1,7 @@
-<%# homeのビュー %>
-
+<%# home（投稿一覧）のビュー %>
 <% content_for :header do %>
   Home
 <% end %>
-
 
 <div class="posts-index">
   <div class="post-grid">
@@ -16,12 +14,10 @@
             <source src="<%= url_for(post.video) %>" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-       
         <% end %>
       </div>
       <p class="post-category"><%= post.genre %></p>
 
-      <!-- いいねボタン（ログイン時のみ表示） -->
       <% if user_signed_in? %>
         <div class="like-button-container" data-post-id="<%= post.id %>">
           <%= render 'likes/like_button', post: post %>

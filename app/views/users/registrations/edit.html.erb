@@ -5,24 +5,23 @@
 
 <div class="users-edit">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :patch, multipart: true }) do |f| %>
-  <div class="profile-container">
-    <!-- プロフィール画像 -->
-    <div class="profile-image-container">
+
+ <div class="profile-container">
+    
+    <div class="profile-image-container"> <!-- プロフィール画像 -->
       <% if resource&.profile_image&.attached? %>
         <%= image_tag resource.profile_image, size: "100x100", class: "profile-image" %>
       <% else %>
         <%= image_tag "/default-profile.png", size: "100x100", class: "profile-image" %>
       <% end %>
 
-      <!-- カメラアイコン（クリックで画像選択） -->
-      <label for="profile_image_upload" class="camera-icon">
+      <label for="profile_image_upload" class="camera-icon">    <!-- カメラアイコン -->
         📷
       </label>
       <%= f.file_field :profile_image, id: "profile_image_upload", class: "hidden-input" %>
     </div>
 
-    <!-- プロフィール情報 -->
-    <div class="profile-info">
+    <div class="profile-info"> <!-- プロフィール情報 -->
       <div class="info-item">
         <span>name</span> <span><%= f.text_field :name, class: "input-field" %></span>
       </div>
@@ -37,11 +36,9 @@
       </div>
     </div>
 
-    <!-- パスワードなし更新用の hidden_field -->
-    <%= f.hidden_field :current_password, value: "dummy_password" %>
+    <%= f.hidden_field :current_password, value: "dummy_password" %> <!-- パスワードなし更新用の hidden_field -->
 
-    <!-- 保存ボタン -->
-    <div class="button-container">
+    <div class="button-container">  <!-- 保存ボタン -->
       <%= f.submit "save", class: "save-button" %>
     </div>
   </div>

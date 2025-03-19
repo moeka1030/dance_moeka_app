@@ -8,16 +8,15 @@
 @import "posts/index";
 @import "posts/new";
 
-
-// サインアップページ-----------------------------------------------------------
+// サインアップページ
 .signup-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* 画面の高さいっぱいに */
+  height: 100vh; 
   text-align: center;
-  background-color: #ffffff; /* 背景を白に */
+  background-color: #ffffff; 
 }
 
 h2 {
@@ -28,14 +27,14 @@ h2 {
 
 .form-group {
   width: 100%;
-  max-width: 300px; /* 幅を調整 */
+  max-width: 300px; 
   margin-bottom: 15px;
 }
 
 .input-field {
   width: 100%;
   padding: 12px;
-  border-radius: 20px; /* 角丸 */
+  border-radius: 20px; 
   border: 2px solid #000;
   font-size: 16px;
   text-align: left;
@@ -45,12 +44,12 @@ h2 {
   width: 100%;
   max-width: 300px;
   padding: 12px;
-  background-color: #4aa3c1; /* 青色 */
+  background-color: #4aa3c1; 
   color: white;
   font-size: 16px;
   font-weight: bold;
   border: none;
-  border-radius: 20px; /* 角丸 */
+  border-radius: 20px; 
   cursor: pointer;
   text-align: center;
 }
@@ -76,23 +75,23 @@ p a:hover {
 
 /* 全体の背景色を変更 */
 body {
-  background-color: #d3dbe3; /* 好きな色に変更 */
-  color: #333; /* テキストの色（黒） */
-  font-family: Arial, sans-serif; /* フォントの指定 */
+  background-color: #d3dbe3; 
+  color: #333; 
+  font-family: Arial, sans-serif; 
   margin: 0;
   padding: 0;
 }
 
 
-/* ログインフォームのデザイン----------------------------------------------------------- */
+/* ログインフォームのデザイン */
 .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* 画面の高さいっぱいに */
+  height: 100vh; 
   text-align: center;
-  background-color: #ffffff; /* 背景を白に */
+  background-color: #ffffff; 
   }
   
   h2 {
@@ -103,14 +102,14 @@ body {
   
   .form-group {
     width: 100%;
-    max-width: 300px; /* 幅を調整 */
+    max-width: 300px;
     margin-bottom: 15px;
   }
   
   .input-field {
     width: 100%;
     padding: 12px;
-    border-radius: 20px; /* 角丸 */
+    border-radius: 20px; 
     border: 2px solid #000;
     font-size: 16px;
     text-align: left;
@@ -120,12 +119,12 @@ body {
     width: 100%;
     max-width: 300px;
     padding: 12px;
-    background-color: #e57373; /* 赤色 */
+    background-color: #e57373;
     color: white;
     font-size: 16px;
     font-weight: bold;
     border: none;
-    border-radius: 20px; /* 角丸 */
+    border-radius: 20px; 
     cursor: pointer;
     text-align: center;
   }
@@ -149,7 +148,7 @@ p a:hover {
   text-decoration: underline;
 }
   
-  /* ヘッダーデザイン----------------------------------------------------------- */
+  /* ヘッダーデザイン*/
   .header {
     width: 100%;
     background-color: white;
@@ -157,17 +156,17 @@ p a:hover {
     font-size: 20px;
     font-weight: bold;
     border-bottom: 2px solid #ddd;
-    display: flex; /* 横並び */
-    justify-content: space-between; /* 左右に振り分け */
-    align-items: center; /* 縦中央 */
-    box-sizing: border-box; /* padding含めた幅計算 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    box-sizing: border-box; 
 
-    bottom: 60px; /* フッターの高さを確保 */
+    bottom: 60px; 
     z-index: 1000;
   }
 
   .header-title {
-    margin: 0; /* 余白なし */
+    margin: 0;
     font-size: 25px;
   }
   
@@ -178,7 +177,7 @@ p a:hover {
   
   .header-right {
   display: flex;
-  align-items: center; /* ボタンを縦中央に */
+  align-items: center; 
   }
   
   .logout-icon i {
@@ -195,7 +194,7 @@ p a:hover {
   }
 
 
-  /* ログアウトボタン----------------------------------------------------------- */
+  /* ログアウトボタン*/
 .logout-btn {
   font-size: 16px;
   color: #A0A0A0;
@@ -214,13 +213,10 @@ p a:hover {
 
 /* メインコンテンツの余白 */
 .main-content {
-  padding-bottom: 60px; /* フッターの高さ分の余白を確保 */
+  padding-bottom: 60px;
 }
   
-
-
-
- /* タブバー（フッター）----------------------------------------------------------- */
+ /* タブバー（フッター） */
 .tab-navbar {
   position: fixed !important;
   bottom: 0;
@@ -228,11 +224,11 @@ p a:hover {
   background-color: white;
   padding: 10px 0;
   display: flex;
-  justify-content: space-around; /* 横並び */
+  justify-content: space-around; 
   align-items: center;
-  border-top: 2px solid #ddd; /* 上線 */
-  height: 60px; /* フッターの高さを確保 */
-  z-index: 1000; /* 他の要素より前面に */
+  border-top: 2px solid #ddd; 
+  height: 60px;
+  z-index: 1000; 
 }
 
 /* タブアイテム */
@@ -241,10 +237,9 @@ p a:hover {
   color: #A0A0A0;
   font-size: 24px;
   display: flex;
-  flex-direction: column; /* アイコンとテキストを縦に配置 */
-  align-items: center; /* アイコンを中央揃え */
-  // justify-content: center;
-  width: 33%; /* 均等幅にする */
+  flex-direction: column; 
+  align-items: center; 
+  width: 33%;
 }
 
 /* 選択中のタブ */
@@ -257,28 +252,28 @@ p a:hover {
 }
 
 .tab-item.active .fas {
-  color: #FF6B6B; /* アクティブ時に赤色 */
+  color: #FF6B6B; 
 }
 
 .tab-item .fas {
-  color: #A0A0A0; /* 通常時はグレー */
+  color: #A0A0A0; 
 }
 
 /* 選択中のタブ */
 .tab-item.active {
-  color: #FF6B6B; /* アクティブなタブを赤色に */
+  color: #FF6B6B; 
 }
 
 /* アイコンのスタイル */
 .tab-item i {
   font-size: 25px;
-  margin-bottom: 5px; /* アイコンとテキストの間隔 */
-  color: #A0A0A0; /* 通常時はグレー */
+  margin-bottom: 5px; 
+  color: #A0A0A0; 
   transition: color 0.3s ease;
 }
 
 .tab-item.active i {
-  color: #FF6B6B; /* アクティブ時のアイコンを赤色に */
+  color: #FF6B6B; 
 }
 
 .profile-header {
@@ -317,7 +312,7 @@ p a:hover {
 
   /* いいねボタンのサイズ */
 .like-button-container button {
-  font-size: 22px; /* ボタンの大きさ */
+  font-size: 22px; 
   background: none;
   border: none;
   cursor: pointer;

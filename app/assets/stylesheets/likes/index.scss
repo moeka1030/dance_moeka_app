@@ -8,19 +8,12 @@
   
   /* 投稿アイテム */
   .likes-index .post-item {
-    // background: #fff;
-    // border-radius: 20px;
-    // box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* レスポンシブ */
-    // gap: 10px;
-    // width: 100%;
     background: #fff;
     border-radius: 20px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     padding: 10px;
-    display: flex; /* flexでも良い */
-    flex-direction: column; /* 縦並び */
+    display: flex; 
+    flex-direction: column; 
     gap: 10px;
     width: 100%;
   }
@@ -28,9 +21,8 @@
   /* 動画のサイズ調整 */
   .likes-index .post-thumbnail {
     width: 100%;
-    aspect-ratio: 14 / 9; /* 横長動画 */
-    background: #eee; /* 動画ない時の背景 */
-
+    aspect-ratio: 14 / 9; 
+    background: #eee;
     border-radius: 10px;
     overflow: hidden;
   }
@@ -38,12 +30,12 @@
   .likes-index .video-content {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ぴったり合わせる */
+    object-fit: cover;
   }
 
   /* ジャンルやテキストのデザイン */
   .likes-index .post-info {
-  margin-top: 5px; /* 余白を小さく */
+  margin-top: 5px;
     font-size: 14px;
     font-weight: bold;
     color: #333;
@@ -56,11 +48,10 @@
   font-weight: bold;
   color: #333;
   margin-top: 5px;
-  margin-bottom: auto; /* 上に詰める */
+  margin-bottom: auto; 
 
 }
 
-  
   /* いいねボタンの調整 */
   .likes-index .like-button-container {
     padding-top: 8px;

@@ -1,3 +1,5 @@
+# プロジェクトで指定されたバージョンの Bundler で実行する
+
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     @posts = Post.includes(:user).order(created_at: :desc)
   end
 
-  def show # 投稿詳細ページ（投稿を押した時に大きく表示）
+  def show # 投稿詳細ページ
     @post = Post.find(params[:id])
   end
 
@@ -16,7 +16,8 @@ class PostsController < ApplicationController
   end
 
   def create # 新規投稿
-    @post = current_user.posts.build(post_params) # `build` を使って current_user に関連付ける
+    @post = Post.new(post_params)
+    @post.user = current_user
     if @post.save
       redirect_to user_profile_path, notice: '投稿が作成されました'
     else
@@ -39,11 +40,14 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to user_profile_path, notice: '投稿が削除されました'
   end
+  
 
   private
-
   def set_post
-    @post = Post.find_by(id: params[:id]) || not_found
+    @post = Post.find_by(id: params[:id]) || not_found #投稿が見つからない場合実行
+  end
+  def not_found
+    redirect_to post_index_path, alert: "投稿が見つかりません"
   end
 
   def post_params
@@ -51,12 +55,7 @@ class PostsController < ApplicationController
   end
 
   def authorize_user!
-    return if @post.user == current_user
-
+    return if @post.user == current_user #ユーザが一致していたらそのまま処理終了
     redirect_to posts_path, alert: "この投稿を編集・削除する権限がありません"
-  end
-
-  def not_found
-    redirect_to posts_path, alert: "投稿が見つかりません"
   end
 end
