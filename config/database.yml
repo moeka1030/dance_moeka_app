@@ -4,17 +4,21 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  <<: *default
+  database: dance_app_db_1mdv
+  username: dance_app_db_1mdv_user
+  password: mQ71l0LydigR2AAYbEeY2NBNbBHz9You
+  host: dpg-cvdqhltumphs73bk5g3g-a.oregon-postgres.render.com
+  port: 5432
 
 test:
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  <<: *default
+  database: dance_app_db_1mdv_test
+  username: dance_app_db_1mdv_user
+  password: mQ71l0LydigR2AAYbEeY2NBNbBHz9You
+  host: dpg-cvdqhltumphs73bk5g3g-a.oregon-postgres.render.com
+  port: 5432
 
-production: #本番環境をpostgreSQLに
+production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
