@@ -1,24 +1,47 @@
-# README
+# Dance App（ダンス経験者向け動画共有Webアプリ）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 🎯 アプリ概要
 
-Things you may want to cover:
+このアプリは、ダンス経験者が気軽に動画をアップロードできる**匿名型のダンス専用SNS**です。  
+既存のSNSとリンクさせず、プライバシーを守りながら、新たなジャンルの発見や経験者同士の交流を目的としています。
 
-* Ruby version
+## 🔨 使用技術・構成
+- フロントエンド：HTML/CSS, JavaScript
+- バックエンド：Ruby on Rails
+- 認証機能：Devise
+- デプロイ：Render
 
-* System dependencies
+## 🛠 実装内容
+- 計画立案、データモデル・構造・UI設計
+- 環境構築（ローカル、デプロイ環境含む）
+- 投稿機能（画像、動画のアップロード）
+- ユーザー認証機能（Devise）
+- UIはシンプルかつ直感的な操作性を意識
 
-* Configuration
+## 🔎 工夫ポイント
+- SNSと切り離すことで、ダンスに特化した安全な空間を実現
+- デザインは直感的な導線とシンプルさを重視
+- モデル設計からUIまで全体を意識して設計
 
-* Database creation
+## 💡 振り返り
 
-* Database initialization
+### 目的・達成度
+- ダンス経験者が安心して利用できる匿名型の投稿サービスを目指した
+- 最低限の機能は完成したが、コミュニティ機能は未実装（今後の課題）
 
-* How to run the test suite
+### 学び・反省点
+- データ設計の優先度の重要性を実感
+- Deviseの導入タイミングはもっと早くすべきだった
+- メモの質を保つ習慣の必要性
+- デザイン面に思ったより時間がかかる点は今後考慮したい
 
-* Services (job queues, cache servers, search engines, etc.)
+### 次回に活かしたいこと
+- データ設計から着手する流れを徹底
+- 実装メモは再利用できる形で日記的に残す
+- 開発スケジュールは+1週間程度の余裕を持たせる
 
-* Deployment instructions
-
-* ...
+## 📌 今後追加予定の機能（アイデア）
+- 他ユーザーの投稿閲覧機能
+- コメント・リアクション機能
+- ユーザーランキング機能（いいね数等）
+- オフラインイベント告知用掲示板
